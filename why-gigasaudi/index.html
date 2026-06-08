@@ -282,6 +282,15 @@ body:has(a:hover) #cur-ring { width:60px; height:60px; border-color:rgba(212,168
   .doc-footer { padding:32px 24px; flex-direction:column; align-items:flex-start; gap:20px; }
   .ft-disc { text-align:left; max-width:100%; }
 }
+
+/* ── SITE NAV ── */
+.site-nav { position:fixed; top:68px; left:50%; transform:translateX(-50%); z-index:99; display:flex; gap:18px; padding:10px 18px; border:1px solid rgba(212,168,67,.18); background:rgba(4,3,10,.72); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); white-space:nowrap; }
+.site-nav a { color:rgba(240,230,200,.62); text-decoration:none; font-family:'Share Tech Mono',monospace; font-size:9px; letter-spacing:.22em; text-transform:uppercase; transition:color .25s; }
+.site-nav a:hover,.site-nav a[aria-current="page"] { color:var(--gold); }
+@media (max-width:700px) {
+  .site-nav { left:0; right:0; top:52px; transform:none; overflow-x:auto; justify-content:flex-start; border-left:0; border-right:0; border-top:0; border-bottom:1px solid rgba(212,168,67,.18); padding:11px 16px; gap:16px; }
+  .site-nav::-webkit-scrollbar { display:none; }
+}
 </style>
 </head>
 <body>
@@ -306,6 +315,15 @@ body:has(a:hover) #cur-ring { width:60px; height:60px; border-color:rgba(212,168
   </div>
 </div>
 
+<nav class="site-nav" aria-label="GigaSaudi navigation">
+  <a href="/">Home</a>
+  <a href="/why-gigasaudi/" aria-current="page">Thesis</a>
+  <a href="/saudi-giga-scale/">Category</a>
+  <a href="/sectors/">Sectors</a>
+  <a href="/sources/">Sources</a>
+  <a href="/availability/">Availability</a>
+</nav>
+
 <nav class="doc-nav">
   <a href="/" class="return-link">← GigaSaudi</a>
   <a href="/" class="nav-brand">Giga<span>Saudi</span></a>
@@ -321,8 +339,8 @@ body:has(a:hover) #cur-ring { width:60px; height:60px; border-color:rgba(212,168
       <div class="doc-subhead">This is not a vanity name. It is a scale name.</div>
       <p class="doc-opening">
         Because some transformations become too large for ordinary language.<br>
-        <strong>GigaSaudi brings together two forces already visible in the global language of Saudi Arabia's transformation:</strong>
-        "Giga" as the register of scale, and "Saudi" as the sovereign anchor of one of the most watched national transformations of the century.
+        <strong>GigaSaudi brings together two forces already visible in the global language of Saudi Arabia’s transformation:</strong>
+        “Giga” as the register of scale, and “Saudi” as the sovereign anchor of one of the most watched national transformations of the century.
       </p>
     </header>
 
@@ -335,7 +353,7 @@ body:has(a:hover) #cur-ring { width:60px; height:60px; border-color:rgba(212,168
       <div class="sec-num">01 — Name Logic</div>
       <h2 class="sec-title">The Name Logic</h2>
       <div class="sec-body">
-        <p>"Giga" is not an artificial prefix in the Saudi context. It is the language of scale: giga-projects, giga-cities, giga-capital, giga-tourism, giga-entertainment, giga-infrastructure, giga-energy, giga-technology, and giga-ambition.</p>
+        <p>“Giga” is not an artificial prefix in the Saudi context. It is the language of scale: giga-projects, giga-cities, giga-capital, giga-tourism, giga-entertainment, giga-infrastructure, giga-energy, giga-technology, and giga-ambition.</p>
         <div class="pull-quote">
           <p>GigaSaudi does not invent that language. It captures it.</p>
         </div>
@@ -360,7 +378,7 @@ body:has(a:hover) #cur-ring { width:60px; height:60px; border-color:rgba(212,168
       <div class="sec-num">03 — Saudi Anchor</div>
       <h2 class="sec-title">Why Saudi Makes It Inevitable</h2>
       <div class="sec-body">
-        <p>Without "Saudi," giga is only a unit. Without "Giga," Saudi is only a national identifier. Together, they create a category phrase.</p>
+        <p>Without “Saudi,” giga is only a unit. Without “Giga,” Saudi is only a national identifier. Together, they create a category phrase.</p>
         <div class="pull-quote">
           <p>GigaSaudi — direct, memorable, globally readable, sovereign in tone, and structurally aligned with the Saudi giga-scale era.</p>
         </div>
@@ -381,7 +399,7 @@ body:has(a:hover) #cur-ring { width:60px; height:60px; border-color:rgba(212,168
       <div class="use-cases">
         <div class="use-case">
           <div class="uc-type">Intelligence<br>Platform</div>
-          <div class="uc-body">A transformation intelligence layer: tracking projects, sectors, capital flows, timelines, narratives, and strategic signals across Saudi Arabia's giga-scale development era.</div>
+          <div class="uc-body">A transformation intelligence layer: tracking projects, sectors, capital flows, timelines, narratives, and strategic signals across Saudi Arabia’s giga-scale development era.</div>
         </div>
         <div class="use-case">
           <div class="uc-type">Institutional<br>Communications</div>
@@ -415,7 +433,7 @@ body:has(a:hover) #cur-ring { width:60px; height:60px; border-color:rgba(212,168
         </div>
         <div class="rarity-item">
           <div class="rarity-marker"></div>
-          <div class="rarity-text"><strong>Not technical.</strong> No acronym. No abbreviation. No invented word. Both components already exist in the world's vocabulary.</div>
+          <div class="rarity-text"><strong>Not technical.</strong> No acronym. No abbreviation. No invented word. Both components already exist in the world’s vocabulary.</div>
         </div>
         <div class="rarity-item">
           <div class="rarity-marker"></div>
