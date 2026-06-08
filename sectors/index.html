@@ -267,6 +267,15 @@ body:has(a:hover) #cur-ring { width:60px; height:60px; border-color:rgba(212,168
   .doc-footer { padding:32px 24px; flex-direction:column; align-items:flex-start; gap:20px; }
   .ft-disc { text-align:left; max-width:100%; }
 }
+
+/* ── SITE NAV ── */
+.site-nav { position:fixed; top:68px; left:50%; transform:translateX(-50%); z-index:99; display:flex; gap:18px; padding:10px 18px; border:1px solid rgba(212,168,67,.18); background:rgba(4,3,10,.72); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); white-space:nowrap; }
+.site-nav a { color:rgba(240,230,200,.62); text-decoration:none; font-family:'Share Tech Mono',monospace; font-size:9px; letter-spacing:.22em; text-transform:uppercase; transition:color .25s; }
+.site-nav a:hover,.site-nav a[aria-current="page"] { color:var(--gold); }
+@media (max-width:700px) {
+  .site-nav { left:0; right:0; top:52px; transform:none; overflow-x:auto; justify-content:flex-start; border-left:0; border-right:0; border-top:0; border-bottom:1px solid rgba(212,168,67,.18); padding:11px 16px; gap:16px; }
+  .site-nav::-webkit-scrollbar { display:none; }
+}
 </style>
 </head>
 <body>
@@ -290,6 +299,15 @@ body:has(a:hover) #cur-ring { width:60px; height:60px; border-color:rgba(212,168
     <div class="gravity-core" style="animation:pulse-core 4s ease-in-out infinite;"></div>
   </div>
 </div>
+
+<nav class="site-nav" aria-label="GigaSaudi navigation">
+  <a href="/">Home</a>
+  <a href="/why-gigasaudi/">Thesis</a>
+  <a href="/saudi-giga-scale/">Category</a>
+  <a href="/sectors/" aria-current="page">Sectors</a>
+  <a href="/sources/">Sources</a>
+  <a href="/availability/">Availability</a>
+</nav>
 
 <nav class="doc-nav">
   <a href="/saudi-giga-scale/" class="return-link">← Saudi Giga-Scale</a>
