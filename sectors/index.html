@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Saudi Giga-Scale — The Transformation Field | GigaSaudi</title>
-<meta name="description" content="Saudi giga-scale is the convergence of sovereign capital, future cities, tourism, energy, AI, sport, culture, and global perception into one national transformation field.">
+<title>Saudi Giga-Scale Sector Map — GigaSaudi</title>
+<meta name="description" content="A strategic sector map of Saudi Arabia's giga-scale era across capital, cities, tourism, energy, AI, sport, culture, logistics, infrastructure, and global perception.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Share+Tech+Mono&display=swap" rel="stylesheet">
 <style>
@@ -77,7 +77,6 @@ body:has(a:hover) #cur-ring { width:60px; height:60px; border-color:rgba(212,168
 
 #content { position:relative; z-index:10; }
 
-/* ── NAV ── */
 .doc-nav {
   position:fixed; top:0; left:0; right:0; z-index:100;
   padding:20px 60px;
@@ -105,10 +104,8 @@ body:has(a:hover) #cur-ring { width:60px; height:60px; border-color:rgba(212,168
 }
 .nav-cta:hover { border-color:var(--gold); }
 
-/* ── DOCUMENT LAYOUT ── */
 .doc-wrap { max-width:800px; margin:0 auto; padding:148px 60px 120px; }
 
-/* ── HERO ── */
 .doc-hero { margin-bottom:80px; padding-bottom:72px; border-bottom:1px solid var(--line-dim); }
 .doc-eyebrow {
   font-size:9px; letter-spacing:.5em; color:var(--gold);
@@ -141,7 +138,6 @@ body:has(a:hover) #cur-ring { width:60px; height:60px; border-color:rgba(212,168
 }
 .doc-opening strong { color:var(--sand); font-style:normal; font-weight:500; }
 
-/* ── AXIOM ── */
 .doc-axiom {
   margin-bottom:88px; padding:52px 0;
   border-top:1px solid var(--line-gold);
@@ -155,7 +151,6 @@ body:has(a:hover) #cur-ring { width:60px; height:60px; border-color:rgba(212,168
   color:var(--gold-hi); letter-spacing:.04em; line-height:1.1;
 }
 
-/* ── SECTIONS ── */
 .doc-section { margin-bottom:68px; padding-bottom:68px; border-bottom:1px solid var(--line-dim); }
 .doc-section.last { border-bottom:none; margin-bottom:0; padding-bottom:0; }
 
@@ -194,56 +189,34 @@ body:has(a:hover) #cur-ring { width:60px; height:60px; border-color:rgba(212,168
 }
 .pull-quote p+p { margin-top:10px !important; }
 
-/* ── SCALE COMPARE ── */
-.scale-compare {
+.sector-grid {
   display:grid; grid-template-columns:1fr 1fr; gap:1px;
   margin-top:28px; border:1px solid var(--line-gold);
   background:var(--line-gold);
 }
-.scale-col {
-  background:var(--void); padding:32px 28px;
-}
-.scale-col.giga { background:rgba(212,168,67,0.04); }
-.scale-head {
-  font-size:9px; letter-spacing:.4em; text-transform:uppercase;
-  margin-bottom:20px; padding-bottom:14px;
-  border-bottom:1px solid var(--line-dim);
-}
-.scale-col:first-child .scale-head { color:var(--sand-lo); }
-.scale-col.giga .scale-head { color:var(--gold); }
-.scale-list { list-style:none; display:flex; flex-direction:column; gap:10px; }
-.scale-list li {
-  font-family:'EB Garamond',serif; font-size:16px; line-height:1.6;
-  color:var(--sand-lo); padding-left:14px; position:relative;
-}
-.scale-list li::before {
-  content:''; position:absolute; left:0; top:10px;
-  width:4px; height:1px; background:var(--sand-lo);
-}
-.scale-col.giga .scale-list li { color:var(--sand); }
-.scale-col.giga .scale-list li::before { background:var(--gold); width:6px; }
-
-/* ── FIELD GRID ── */
-.field-grid {
-  display:grid; grid-template-columns:1fr 1fr; gap:1px;
-  margin-top:28px; border:1px solid var(--line-gold);
-  background:var(--line-gold);
-}
-.field-item {
+.sector-card {
   background:var(--void); padding:28px 24px;
   transition:background .3s;
 }
-.field-item:hover { background:rgba(212,168,67,0.05); }
-.field-label {
-  font-size:9px; letter-spacing:.4em; color:var(--gold);
-  text-transform:uppercase; margin-bottom:10px;
+.sector-card:hover { background:rgba(212,168,67,0.05); }
+.sector-num {
+  font-size:9px; letter-spacing:.4em; color:var(--gold-lo);
+  text-transform:uppercase; margin-bottom:8px;
 }
-.field-body {
+.sector-name {
+  font-family:'Bebas Neue',sans-serif; font-size:24px;
+  color:var(--white); letter-spacing:.06em; margin-bottom:4px; line-height:1;
+}
+.sector-lane {
+  font-size:9px; letter-spacing:.25em; color:var(--gold);
+  text-transform:uppercase; margin-bottom:14px;
+  padding-bottom:12px; border-bottom:1px solid var(--line-dim);
+}
+.sector-body {
   font-family:'EB Garamond',serif;
   font-size:15px; line-height:1.7; color:var(--sand-lo);
 }
 
-/* ── NAV LINKS ── */
 .nav-links { display:flex; flex-direction:column; gap:0; margin-top:28px; }
 .nav-link {
   display:flex; align-items:center; gap:24px;
@@ -264,20 +237,6 @@ body:has(a:hover) #cur-ring { width:60px; height:60px; border-color:rgba(212,168
 .nl-arr { font-size:16px; color:var(--gold-lo); transition:color .3s; }
 .nav-link:hover .nl-arr { color:var(--gold); }
 
-/* ── NEXT PAGE NAV ── */
-.doc-next {
-  max-width:800px; margin:0 auto; padding:36px 60px;
-  border-top:1px solid var(--line-gold);
-  display:flex; align-items:center; justify-content:space-between;
-}
-.doc-next-label { font-size:9px; letter-spacing:.4em; color:var(--gold-lo); text-transform:uppercase; }
-.doc-next-link { display:flex; align-items:baseline; gap:14px; text-decoration:none; transition:all .3s; }
-.doc-next-title { font-family:'EB Garamond',serif; font-size:18px; color:var(--sand); font-style:italic; transition:color .3s; }
-.doc-next-sub { font-size:9px; letter-spacing:.28em; text-transform:uppercase; color:var(--gold-lo); transition:color .3s; }
-.doc-next-link:hover .doc-next-title { color:var(--gold); }
-.doc-next-link:hover .doc-next-sub { color:var(--gold-hi); }
-
-/* ── FOOTER ── */
 .doc-footer {
   border-top:1px solid var(--line-dim); padding:40px 60px;
   display:flex; align-items:center; justify-content:space-between; gap:40px;
@@ -304,9 +263,7 @@ body:has(a:hover) #cur-ring { width:60px; height:60px; border-color:rgba(212,168
   .doc-nav { padding:16px 24px; }
   .nav-cta { display:none; }
   .doc-wrap { padding:120px 24px 80px; }
-  .scale-compare { grid-template-columns:1fr; }
-  .field-grid { grid-template-columns:1fr; }
-  .doc-next { padding:24px; flex-direction:column; gap:12px; }
+  .sector-grid { grid-template-columns:1fr; }
   .doc-footer { padding:32px 24px; flex-direction:column; align-items:flex-start; gap:20px; }
   .ft-disc { text-align:left; max-width:100%; }
 }
@@ -335,7 +292,7 @@ body:has(a:hover) #cur-ring { width:60px; height:60px; border-color:rgba(212,168
 </div>
 
 <nav class="doc-nav">
-  <a href="/why-gigasaudi/" class="return-link">← Why GigaSaudi</a>
+  <a href="/saudi-giga-scale/" class="return-link">← Saudi Giga-Scale</a>
   <a href="/" class="nav-brand">Giga<span>Saudi</span></a>
   <a href="mailto:inquiries@gigasaudi.com" class="nav-cta">Inquire →</a>
 </nav>
@@ -344,144 +301,135 @@ body:has(a:hover) #cur-ring { width:60px; height:60px; border-color:rgba(212,168
   <div class="doc-wrap">
 
     <header class="doc-hero">
-      <div class="doc-eyebrow">Category Definition</div>
-      <h1 class="doc-headline">Saudi<br>Giga-<em>Scale</em></h1>
-      <div class="doc-subhead">The transformation field that GigaSaudi names.</div>
+      <div class="doc-eyebrow">Sector Map · Strategic Reference</div>
+      <h1 class="doc-headline">The Ten<br><em>Sectors</em></h1>
+      <div class="doc-subhead">Saudi giga-scale is not one sector.</div>
       <p class="doc-opening">
-        <strong>Saudi giga-scale is the convergence of sovereign capital, future cities, tourism, energy, AI, sport, culture, logistics, infrastructure, and global perception</strong> into one national transformation field.
+        The Saudi giga-scale era is not built inside one category.<br>
+        <strong>It is built across categories</strong> — capital, cities, tourism, energy, AI, sport, culture, logistics, infrastructure, and global perception.
       </p>
     </header>
 
     <div class="doc-axiom rx">
-      <div class="axiom-label">Operating Principle</div>
-      <div class="axiom-text">The scale at which individual projects<br>become part of a larger operating system.</div>
+      <div class="axiom-label">The Governing Principle</div>
+      <div class="axiom-text">Saudi giga-scale is not one sector.<br>It is the convergence layer<br>connecting sectors.</div>
     </div>
 
     <section class="doc-section rx rx-d1">
-      <div class="sec-num">01 — Definition</div>
-      <h2 class="sec-title">What Saudi Giga-Scale Is</h2>
+      <div class="sec-num">01 — Sector Map</div>
+      <h2 class="sec-title">The Sector Map</h2>
       <div class="sec-body">
-        <p>Saudi giga-scale is not a single project category. It is the operating layer that connects projects that have never been planned as one thing, but which are understood — globally — as one phenomenon.</p>
-        <p>It is the register at which capital allocation, city-building, tourism development, energy transition, technology strategy, sport investment, cultural programming, and sovereign positioning converge into a single national transformation.</p>
-        <div class="pull-quote">
-          <p>When the world describes Saudi Arabia's transformation, it does not describe one sector. It describes a scale. Saudi giga-scale is that scale.</p>
+        <p>Saudi giga-scale is not contained inside one project, ministry, city, sector, or campaign.</p>
+        <p>It is a transformation field created by the convergence of capital, cities, tourism, energy, technology, sport, culture, logistics, infrastructure, and global perception.</p>
+        <p>GigaSaudi maps that field as a scale layer.</p>
+      </div>
+      <div class="sector-grid">
+        <div class="sector-card">
+          <div class="sector-num">01</div>
+          <div class="sector-name">Capital</div>
+          <div class="sector-lane">The financial engine</div>
+          <div class="sector-body">Sovereign capital of a scale rarely deployed in modern economic history — flowing across infrastructure, investment mandates, technology, real estate, and long-horizon global deployment.</div>
         </div>
-        <p>The defining characteristic of giga-scale is not magnitude alone. It is simultaneity: multiple transformation programs running at the same time, in the same territory, with the same sovereign mandate.</p>
+        <div class="sector-card">
+          <div class="sector-num">02</div>
+          <div class="sector-name">Cities</div>
+          <div class="sector-lane">The urban layer</div>
+          <div class="sector-body">New cities, future districts, destination zones, spatial planning, and built-environment ambition — the physical reimagining of the national territory.</div>
+        </div>
+        <div class="sector-card">
+          <div class="sector-num">03</div>
+          <div class="sector-name">Tourism</div>
+          <div class="sector-lane">The destination layer</div>
+          <div class="sector-body">Luxury travel, heritage routes, coastal development, hospitality, events, and global visitor positioning — the transformation of Saudi Arabia into a destination of strategic scale.</div>
+        </div>
+        <div class="sector-card">
+          <div class="sector-num">04</div>
+          <div class="sector-name">Energy</div>
+          <div class="sector-lane">The transition layer</div>
+          <div class="sector-body">Oil-era strength running in parallel with renewable expansion, hydrogen ambition, grid systems, and industrial energy strategy — a sector redefining itself at sovereign scale.</div>
+        </div>
+        <div class="sector-card">
+          <div class="sector-num">05</div>
+          <div class="sector-name">Technology &amp; AI</div>
+          <div class="sector-lane">The intelligence layer</div>
+          <div class="sector-body">AI, cloud infrastructure, data systems, smart-city logic, digital government, and automation — sovereign investment in intelligence as a foundational national priority.</div>
+        </div>
+        <div class="sector-card">
+          <div class="sector-num">06</div>
+          <div class="sector-name">Sport</div>
+          <div class="sector-lane">The global attention layer</div>
+          <div class="sector-body">Football, motorsport, golf, esports, events, venues, and international audience capture — sport deployed as an instrument of national positioning and global attention.</div>
+        </div>
+        <div class="sector-card">
+          <div class="sector-num">07</div>
+          <div class="sector-name">Culture</div>
+          <div class="sector-lane">The identity layer</div>
+          <div class="sector-body">Heritage, museums, architecture, festivals, language, memory, and cultural repositioning — the articulation of Saudi identity at a new scale of ambition and global visibility.</div>
+        </div>
+        <div class="sector-card">
+          <div class="sector-num">08</div>
+          <div class="sector-name">Logistics</div>
+          <div class="sector-lane">The movement layer</div>
+          <div class="sector-body">Ports, airports, corridors, industrial zones, supply chains, and regional trade connectivity — the infrastructure of movement that connects the transformation to the world.</div>
+        </div>
+        <div class="sector-card">
+          <div class="sector-num">09</div>
+          <div class="sector-name">Infrastructure</div>
+          <div class="sector-lane">The physical systems layer</div>
+          <div class="sector-body">Transport, utilities, construction, materials, water, public works, and national build capacity — the physical foundation across which the transformation is built.</div>
+        </div>
+        <div class="sector-card">
+          <div class="sector-num">10</div>
+          <div class="sector-name">Global Perception</div>
+          <div class="sector-lane">The narrative layer</div>
+          <div class="sector-body">How the world reads, measures, visits, invests in, debates, and remembers the Saudi transformation — the most contested and most strategic layer of all.</div>
+        </div>
       </div>
     </section>
 
     <section class="doc-section rx rx-d2">
-      <div class="sec-num">02 — Distinction</div>
-      <h2 class="sec-title">Not Mega. Giga.</h2>
+      <div class="sec-num">02 — Convergence Layer</div>
+      <h2 class="sec-title">Why Sectors Need A Scale Layer</h2>
       <div class="sec-body">
-        <p>The distinction between mega-scale and giga-scale is structural, not merely numerical.</p>
-      </div>
-      <div class="scale-compare">
-        <div class="scale-col">
-          <div class="scale-head">Mega Scale</div>
-          <ul class="scale-list">
-            <li>Single project or program</li>
-            <li>Single sector or domain</li>
-            <li>Defined timeline and output</li>
-            <li>Project-level authority</li>
-            <li>Bounded by its brief</li>
-          </ul>
+        <p>Each sector can be studied separately.</p>
+        <p>But the strategic meaning appears when the sectors are read together.</p>
+        <div class="pull-quote">
+          <p>Capital changes what can be built. Cities change how the country is imagined. Tourism changes how the country is visited. Technology changes how the country operates. Sport and culture change how the country is seen.</p>
         </div>
-        <div class="scale-col giga">
-          <div class="scale-head">Giga Scale</div>
-          <ul class="scale-list">
-            <li>Cross-sector transformation field</li>
-            <li>Multi-capital, simultaneous deployment</li>
-            <li>Compound, generational timeline</li>
-            <li>Sovereign-level mandate and authority</li>
-            <li>Bounded only by the national vision</li>
-          </ul>
-        </div>
-      </div>
-      <div class="sec-body" style="margin-top:28px;">
-        <p>A mega-project has a budget, a scope, a completion date. Saudi giga-scale has a national vision, a sovereign fund, and a generation. These operate at different orders of magnitude — in capital, in complexity, and in consequence.</p>
+        <p>GigaSaudi is the name for the layer where these sector stories converge.</p>
       </div>
     </section>
 
     <section class="doc-section rx rx-d1">
-      <div class="sec-num">03 — The Field</div>
-      <h2 class="sec-title">The Transformation Field</h2>
+      <div class="sec-num">03 — Not A Directory</div>
+      <h2 class="sec-title">Not A Directory</h2>
       <div class="sec-body">
-        <p>Saudi giga-scale is not one vertical. It is the convergence of eight simultaneous transformation dimensions operating within a single sovereign mandate.</p>
-      </div>
-      <div class="field-grid">
-        <div class="field-item">
-          <div class="field-label">Capital Scale</div>
-          <div class="field-body">Sovereign capital of a scale rarely deployed in modern economic history, flowing across infrastructure, technology, real estate, and global investment simultaneously.</div>
-        </div>
-        <div class="field-item">
-          <div class="field-label">Urban Scale</div>
-          <div class="field-body">Multiple new-generation cities and mega-districts being built simultaneously, from scratch, within a single national territory.</div>
-        </div>
-        <div class="field-item">
-          <div class="field-label">Tourism Scale</div>
-          <div class="field-body">A national tourism platform expanding across heritage, sport, entertainment, luxury, adventure, and culture — targeting landmark global positioning.</div>
-        </div>
-        <div class="field-item">
-          <div class="field-label">Energy Scale</div>
-          <div class="field-body">Parallel development of legacy energy leadership and major renewable and clean energy infrastructure — simultaneously, in the same territory.</div>
-        </div>
-        <div class="field-item">
-          <div class="field-label">Technology Scale</div>
-          <div class="field-body">Active sovereign investment in AI, digital infrastructure, smart cities, and innovation ecosystems as foundational national strategic priorities.</div>
-        </div>
-        <div class="field-item">
-          <div class="field-label">Sport Scale</div>
-          <div class="field-body">Hosting of major global sporting events, sustained investment in multiple leagues, athletes, and sporting categories as instruments of national positioning.</div>
-        </div>
-        <div class="field-item">
-          <div class="field-label">Culture Scale</div>
-          <div class="field-body">A national culture program expanding museums, heritage sites, entertainment infrastructure, and international cultural presence simultaneously.</div>
-        </div>
-        <div class="field-item">
-          <div class="field-label">Perception Scale</div>
-          <div class="field-body">A coordinated effort to shift global perception of Saudi Arabia through media, events, investment, architecture, sport, and presence — operating at sovereign scale.</div>
+        <p>This is not a directory of Saudi projects.</p>
+        <p>It is a sector map for understanding how separate transformation lanes combine into one giga-scale field.</p>
+        <div class="pull-quote">
+          <p>The purpose is not to list everything. The purpose is to identify the strategic layers that make the transformation readable.</p>
         </div>
       </div>
     </section>
 
     <section class="doc-section rx rx-d2">
-      <div class="sec-num">04 — Naming Need</div>
-      <h2 class="sec-title">Why It Needs A Name</h2>
+      <div class="sec-num">04 — Future Expansion</div>
+      <h2 class="sec-title">Future Expansion</h2>
       <div class="sec-body">
-        <p>A transformation field with no name is harder to reference, harder to analyze, harder to represent, and harder to own.</p>
-        <p>Without a category coordinate, the field is described only in parts. Observers reference individual projects without a frame that connects them. Analysts write about separate sectors without the architecture that unifies them. The phenomenon is understood but unnamed.</p>
-        <div class="pull-quote">
-          <p>Saudi giga-scale already exists as a phenomenon. What it has not had is a single naming coordinate.</p>
-        </div>
-        <p>Category coordinates are not descriptions. They are handles. A handle lets you carry the thing.</p>
-        <p>The right name compresses the entire transformation field into a single term — one that can be used in a sentence, put on a platform, applied to a publication, associated with a fund, or anchored to an institution. Without that compression, the field requires explanation every time it is referenced.</p>
+        <p>This sector map is the foundation for future reference pages across capital, cities, tourism, energy, AI, sport, culture, logistics, infrastructure, and global perception.</p>
+        <p>Each sector can later become a dedicated reference layer.</p>
       </div>
     </section>
 
-    <section class="doc-section rx rx-d3">
-      <div class="sec-num">05 — Category Position</div>
-      <h2 class="sec-title">Category Ownership</h2>
-      <div class="sec-body">
-        <p>GigaSaudi does not sit inside one project. It sits above the projects.</p>
-        <p>Most names in this space are sector-specific — they reference one city, one fund, one sector, one event. GigaSaudi operates at the category level: it names the field, not the contents of the field.</p>
-        <div class="pull-quote">
-          <p>This is the structural rarity of the name: it can hold the entire transformation without belonging to any piece of it.</p>
-        </div>
-        <p>A name that sits above the projects can grow with the transformation. It does not age with any single announcement, any single completion, or any single phase. It ages with the era — which is still in its earliest chapters.</p>
-        <p>The category, once named, can be developed, extended, and institutionalized. The name becomes the frame. The frame outlasts the contents.</p>
-      </div>
-    </section>
-
-    <section class="doc-section last rx rx-d2">
-      <div class="sec-num">06 — Explore Further</div>
+    <section class="doc-section last rx rx-d3">
+      <div class="sec-num">05 — Explore Further</div>
       <h2 class="sec-title">Explore Further</h2>
       <div class="nav-links">
-        <a href="/sectors/" class="nav-link">
+        <a href="/saudi-giga-scale/" class="nav-link">
           <div class="nl-num">01</div>
           <div class="nl-body">
-            <div class="nl-title">Sector Map</div>
-            <div class="nl-path">/sectors/ — The ten transformation lanes that compose the field</div>
+            <div class="nl-title">The Transformation Field</div>
+            <div class="nl-path">/saudi-giga-scale/ — What Saudi giga-scale is as a category</div>
           </div>
           <div class="nl-arr">→</div>
         </a>
@@ -501,25 +449,17 @@ body:has(a:hover) #cur-ring { width:60px; height:60px; border-color:rgba(212,168
           </div>
           <div class="nl-arr">→</div>
         </a>
-        <a href="mailto:inquiries@gigasaudi.com" class="nav-link">
+        <a href="/availability/" class="nav-link">
           <div class="nl-num">04</div>
           <div class="nl-body">
-            <div class="nl-title">Strategic Acquisition</div>
-            <div class="nl-path">inquiries@gigasaudi.com — Qualified strategic acquirers only</div>
+            <div class="nl-title">Strategic Availability</div>
+            <div class="nl-path">/availability/ — Acquisition posture and qualified inquiry</div>
           </div>
           <div class="nl-arr">→</div>
         </a>
       </div>
     </section>
 
-  </div>
-
-  <div class="doc-next rx">
-    <div class="doc-next-label">Continue</div>
-    <a href="/sectors/" class="doc-next-link">
-      <span class="doc-next-title">Explore the sector map</span>
-      <span class="doc-next-sub">/sectors/ →</span>
-    </a>
   </div>
 
   <footer class="doc-footer">
