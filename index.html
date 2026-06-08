@@ -8,9 +8,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Share+Tech+Mono&display=swap" rel="stylesheet">
 <style>
-/* ══════════════════════════════════════════════
-   FOUNDATION
-══════════════════════════════════════════════ */
 :root {
   --void: #04030a;
   --deep: #080714;
@@ -40,7 +37,6 @@ body {
   cursor: none;
 }
 
-/* Grain */
 body::before {
   content: '';
   position: fixed; inset: 0;
@@ -49,15 +45,11 @@ body::before {
   pointer-events: none; z-index: 9900;
 }
 
-/* ── CURSOR ── */
 #cur { position:fixed; width:6px; height:6px; border-radius:50%; background:var(--gold); pointer-events:none; z-index:9999; transform:translate(-50%,-50%); transition:width .2s,height .2s; mix-blend-mode:screen; }
 #cur-ring { position:fixed; width:40px; height:40px; border:1px solid rgba(212,168,67,0.4); border-radius:50%; pointer-events:none; z-index:9998; transform:translate(-50%,-50%); transition:width .4s,height .4s,border-color .3s; }
 body:has(a:hover) #cur { width:12px; height:12px; }
 body:has(a:hover) #cur-ring { width:60px; height:60px; border-color:rgba(212,168,67,0.8); }
 
-/* ══════════════════════════════════════════════
-   ORBITAL CANVAS — FIXED BACKGROUND
-══════════════════════════════════════════════ */
 #orbital-canvas {
   position: fixed;
   inset: 0;
@@ -65,7 +57,6 @@ body:has(a:hover) #cur-ring { width:60px; height:60px; border-color:rgba(212,168
   overflow: hidden;
 }
 
-/* Central gravity point */
 .gravity-core {
   position: absolute;
   top: 50%; left: 50%;
@@ -81,7 +72,6 @@ body:has(a:hover) #cur-ring { width:60px; height:60px; border-color:rgba(212,168
     0 0 80px 20px rgba(212,168,67,0.4);
 }
 
-/* Orbital rings */
 .orbit {
   position: absolute;
   top: 50%; left: 50%;
@@ -95,7 +85,6 @@ body:has(a:hover) #cur-ring { width:60px; height:60px; border-color:rgba(212,168
 .orbit-4 { width:900px; height:900px; margin:-450px 0 0 -450px; border-color:rgba(212,168,67,0.04); animation: spin 160s linear infinite reverse; }
 .orbit-5 { width:1300px; height:1300px; margin:-650px 0 0 -650px; border-color:rgba(212,168,67,0.025); animation: spin 220s linear infinite; }
 
-/* Nodes on orbits */
 .node {
   position: absolute;
   width: 5px; height: 5px;
@@ -104,7 +93,6 @@ body:has(a:hover) #cur-ring { width:60px; height:60px; border-color:rgba(212,168
   box-shadow: 0 0 10px 2px rgba(212,168,67,0.6);
 }
 
-/* Grid lines — cartographic */
 .grid-h, .grid-v {
   position: absolute;
   background: var(--line-dim);
@@ -112,7 +100,6 @@ body:has(a:hover) #cur-ring { width:60px; height:60px; border-color:rgba(212,168
 .grid-h { left:0; right:0; height:1px; }
 .grid-v { top:0; bottom:0; width:1px; }
 
-/* Coordinate labels */
 .coord-label {
   position: absolute;
   font-family: 'Share Tech Mono', monospace;
@@ -128,15 +115,11 @@ body:has(a:hover) #cur-ring { width:60px; height:60px; border-color:rgba(212,168
   50% { box-shadow: 0 0 0 16px rgba(212,168,67,0.08), 0 0 0 50px rgba(212,168,67,0.055), 0 0 0 110px rgba(212,168,67,0.03), 0 0 100px 30px rgba(212,168,67,0.5); }
 }
 
-/* ══════════════════════════════════════════════
-   CONTENT LAYER
-══════════════════════════════════════════════ */
 #content {
   position: relative;
   z-index: 10;
 }
 
-/* ── SECTION BASE ── */
 .screen {
   min-height: 100vh;
   display: flex;
@@ -146,9 +129,6 @@ body:has(a:hover) #cur-ring { width:60px; height:60px; border-color:rgba(212,168
   position: relative;
 }
 
-/* ══════════════════════════════════════════════
-   SECTION 01 — ENTRY / IDENT
-══════════════════════════════════════════════ */
 #s-entry {
   min-height: 100vh;
   display: flex;
@@ -165,7 +145,6 @@ body:has(a:hover) #cur-ring { width:60px; height:60px; border-color:rgba(212,168
   max-width: 700px;
 }
 
-/* System status bar */
 .sys-bar {
   display: flex;
   align-items: center;
@@ -179,7 +158,6 @@ body:has(a:hover) #cur-ring { width:60px; height:60px; border-color:rgba(212,168
 .sys-line { flex:1; max-width:80px; height:1px; background: linear-gradient(to right, var(--gold-lo), transparent); }
 @keyframes blink { 0%,100%{opacity:1} 50%{opacity:.3} }
 
-/* The big ident */
 .ident {
   margin-bottom: 48px;
   opacity: 0;
@@ -204,7 +182,6 @@ body:has(a:hover) #cur-ring { width:60px; height:60px; border-color:rgba(212,168
   color: var(--white);
   position: relative;
 }
-/* Scanline effect on GIGA */
 .ident-giga::after {
   content: 'GIGA';
   position: absolute;
@@ -220,7 +197,6 @@ body:has(a:hover) #cur-ring { width:60px; height:60px; border-color:rgba(212,168
   -webkit-text-stroke: 1.5px var(--gold);
 }
 
-/* Tagline */
 .ident-tagline {
   font-family: 'EB Garamond', serif;
   font-style: italic;
@@ -234,7 +210,6 @@ body:has(a:hover) #cur-ring { width:60px; height:60px; border-color:rgba(212,168
 }
 .ident-tagline strong { color: var(--sand); font-style: normal; font-weight: 500; }
 
-/* Hero claim — the naming resolution line */
 .hero-claim {
   display: block;
   margin-top: 22px;
@@ -246,7 +221,6 @@ body:has(a:hover) #cur-ring { width:60px; height:60px; border-color:rgba(212,168
   font-style: normal;
 }
 
-/* Hero CTA link */
 .hero-actions {
   margin-top: 34px;
   opacity: 0;
@@ -266,7 +240,19 @@ body:has(a:hover) #cur-ring { width:60px; height:60px; border-color:rgba(212,168
 }
 .hero-link:hover { border-color: var(--gold); }
 
-/* Entry metrics — right side */
+.inline-strategy-link {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 28px;
+  color: var(--gold-lo);
+  text-decoration: none;
+  font-size: 9px;
+  letter-spacing: .3em;
+  text-transform: uppercase;
+  transition: color .3s;
+}
+.inline-strategy-link:hover { color: var(--gold); }
+
 .entry-metrics {
   position: absolute;
   right: 60px;
@@ -296,7 +282,6 @@ body:has(a:hover) #cur-ring { width:60px; height:60px; border-color:rgba(212,168
 }
 .e-lbl { font-size: 9px; letter-spacing:.3em; color: var(--sand-lo); text-transform: uppercase; line-height: 1.6; }
 
-/* Scroll indicator */
 .scroll-ind {
   position: absolute;
   bottom: 40px;
@@ -311,9 +296,6 @@ body:has(a:hover) #cur-ring { width:60px; height:60px; border-color:rgba(212,168
 .scroll-track { width:60px; height:1px; background:var(--line-gold); position:relative; overflow:hidden; }
 .scroll-fill { position:absolute; left:0; top:0; height:100%; width:0%; background:var(--gold); transition:width .1s; }
 
-/* ══════════════════════════════════════════════
-   SECTION 02 — THE THEOREM
-══════════════════════════════════════════════ */
 #s-theorem {
   background: transparent;
   min-height: 100vh;
@@ -362,7 +344,6 @@ body:has(a:hover) #cur-ring { width:60px; height:60px; border-color:rgba(212,168
   gap: 0;
 }
 
-/* Decoded breakdown — like a signal analysis */
 .decode-row {
   display: grid;
   grid-template-columns: 80px 1fr;
@@ -395,10 +376,6 @@ body:has(a:hover) #cur-ring { width:60px; height:60px; border-color:rgba(212,168
 }
 .decode-body strong { color: var(--sand); font-weight: 500; }
 
-/* ══════════════════════════════════════════════
-   SECTION 03 — GIGA ARCHITECTURE
-   Unique layout: horizontal scroll cards
-══════════════════════════════════════════════ */
 #s-architecture {
   min-height: 100vh;
   padding: 80px 0 80px 60px;
@@ -438,7 +415,6 @@ body:has(a:hover) #cur-ring { width:60px; height:60px; border-color:rgba(212,168
 }
 .arch-btn:hover { background: var(--gold-trace); border-color: var(--gold); }
 
-/* Horizontal scroll container */
 .arch-scroll {
   display: flex;
   gap: 2px;
@@ -450,7 +426,6 @@ body:has(a:hover) #cur-ring { width:60px; height:60px; border-color:rgba(212,168
 .arch-scroll:active { cursor: grabbing; }
 .arch-scroll::-webkit-scrollbar { display: none; }
 
-/* Project cards — tall vertical panels */
 .proj-panel {
   flex-shrink: 0;
   width: 300px;
@@ -526,7 +501,6 @@ body:has(a:hover) #cur-ring { width:60px; height:60px; border-color:rgba(212,168
   transition: width 1.5s ease;
 }
 
-/* Background number watermark */
 .proj-bg-num {
   position: absolute;
   bottom: -20px; right: -10px;
@@ -538,10 +512,6 @@ body:has(a:hover) #cur-ring { width:60px; height:60px; border-color:rgba(212,168
   user-select: none;
 }
 
-/* ══════════════════════════════════════════════
-   SECTION 04 — CAPITAL THEOREM
-   Unique: full-bleed split with live counter feel
-══════════════════════════════════════════════ */
 #s-capital {
   min-height: 100vh;
   display: grid;
@@ -567,7 +537,6 @@ body:has(a:hover) #cur-ring { width:60px; height:60px; border-color:rgba(212,168
 }
 .cap-header-label::after { content:''; flex:1; max-width:60px; height:1px; background: var(--gold-lo); }
 
-/* Huge capital number */
 .cap-big-num {
   font-family: 'Bebas Neue', sans-serif;
   font-size: clamp(64px, 10vw, 130px);
@@ -584,7 +553,6 @@ body:has(a:hover) #cur-ring { width:60px; height:60px; border-color:rgba(212,168
   margin-bottom: 56px;
 }
 
-/* Capital data table */
 .cap-table { width:100%; border-collapse: collapse; }
 .cap-table tr { border-bottom: 1px solid var(--line-dim); }
 .cap-table tr:last-child { border-bottom: none; }
@@ -621,7 +589,6 @@ body:has(a:hover) #cur-ring { width:60px; height:60px; border-color:rgba(212,168
   background: rgba(212,168,67,0.02);
 }
 
-/* Doctrine block */
 .doctrine-pre {
   font-size: 9px;
   letter-spacing: .5em;
@@ -649,7 +616,6 @@ body:has(a:hover) #cur-ring { width:60px; height:60px; border-color:rgba(212,168
 }
 .doctrine-body em { font-style: italic; color: var(--gold-hi); }
 
-/* Capital flows */
 .cap-flows { display: flex; flex-direction: column; gap: 0; }
 .flow-row {
   display: flex;
@@ -664,10 +630,6 @@ body:has(a:hover) #cur-ring { width:60px; height:60px; border-color:rgba(212,168
 .flow-bar { position:absolute; left:0; top:0; height:100%; background: var(--gold); transition: width 1.5s ease; }
 .flow-amt { font-family:'Bebas Neue',sans-serif; font-size:18px; color:var(--gold); letter-spacing:.04em; min-width:70px; text-align:right; }
 
-/* ══════════════════════════════════════════════
-   SECTION 05 — ACQUIRER MAP
-   Unique: target coordinates layout
-══════════════════════════════════════════════ */
 #s-acquire {
   min-height: 100vh;
   padding: 80px 60px;
@@ -689,7 +651,6 @@ body:has(a:hover) #cur-ring { width:60px; height:60px; border-color:rgba(212,168
 }
 .acq-title em { color: var(--gold); font-style: normal; }
 
-/* Target grid — coordinate style */
 .target-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -715,7 +676,6 @@ body:has(a:hover) #cur-ring { width:60px; height:60px; border-color:rgba(212,168
   background: rgba(212,168,67,0.03);
 }
 
-/* Crosshair watermark */
 .target-cell::after {
   content: '✛';
   position: absolute;
@@ -744,7 +704,6 @@ body:has(a:hover) #cur-ring { width:60px; height:60px; border-color:rgba(212,168
 }
 .target-cell.primary .target-rationale { font-size: 16px; color: var(--sand); }
 
-/* Threshold block */
 .threshold {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -770,7 +729,6 @@ body:has(a:hover) #cur-ring { width:60px; height:60px; border-color:rgba(212,168
 .thresh-cell.mid .thresh-val { color: var(--gold-hi); }
 .thresh-note { font-size: 10px; color: var(--sand-lo); }
 
-/* CTA */
 .acq-cta-wrap { display: flex; align-items: center; gap: 40px; }
 .acq-cta {
   display: inline-flex;
@@ -800,9 +758,6 @@ body:has(a:hover) #cur-ring { width:60px; height:60px; border-color:rgba(212,168
 .acq-cta:hover::before { transform: translateX(0); }
 .acq-note { font-size: 11px; color: var(--sand-lo); max-width: 300px; line-height: 1.7; }
 
-/* ══════════════════════════════════════════════
-   FOOTER
-══════════════════════════════════════════════ */
 #s-footer {
   border-top: 1px solid var(--line-dim);
   padding: 48px 60px;
@@ -830,9 +785,6 @@ body:has(a:hover) #cur-ring { width:60px; height:60px; border-color:rgba(212,168
 .ft-right { text-align: right; }
 .ft-copy { font-size: 9px; letter-spacing: .25em; color: var(--gold-lo); text-transform: uppercase; }
 
-/* ══════════════════════════════════════════════
-   ANIMATIONS & REVEALS
-══════════════════════════════════════════════ */
 @keyframes fadeSlide {
   from { opacity:0; transform: translateY(24px); }
   to { opacity:1; transform: translateY(0); }
@@ -855,9 +807,6 @@ body:has(a:hover) #cur-ring { width:60px; height:60px; border-color:rgba(212,168
 .rx-d6 { transition-delay: .6s; }
 .rx-d7 { transition-delay: .7s; }
 
-/* ══════════════════════════════════════════════
-   RESPONSIVE — 900px
-══════════════════════════════════════════════ */
 @media (max-width: 900px) {
   body { cursor: auto; }
   #cur, #cur-ring { display: none; }
@@ -880,9 +829,6 @@ body:has(a:hover) #cur-ring { width:60px; height:60px; border-color:rgba(212,168
   .acq-cta-wrap { flex-direction: column; align-items: flex-start; }
 }
 
-/* ══════════════════════════════════════════════
-   RESPONSIVE — 600px (MOBILE HERO)
-══════════════════════════════════════════════ */
 @media (max-width: 600px) {
   #s-entry {
     min-height: 100vh;
@@ -890,104 +836,43 @@ body:has(a:hover) #cur-ring { width:60px; height:60px; border-color:rgba(212,168
     align-items: flex-start;
     justify-content: center;
   }
-
-  .sys-bar {
-    margin-bottom: 72px;
-    gap: 14px;
-    max-width: 100%;
-  }
-
-  .sys-text {
-    font-size: 8px;
-    letter-spacing: .34em;
-    line-height: 1.5;
-  }
-
-  .sys-line {
-    max-width: 42px;
-  }
-
-  .ident-pre {
-    font-size: 9px;
-    letter-spacing: .55em;
-    margin-bottom: 18px;
-  }
-
-  .ident {
-    margin-bottom: 44px;
-  }
-
-  .ident-giga,
-  .ident-saudi {
-    font-size: clamp(76px, 24vw, 110px);
-  }
-
-  .ident-tagline {
-    font-size: 17px;
-    line-height: 1.75;
-    max-width: 94%;
-    margin-top: 32px;
-    color: rgba(240,230,200,0.84);
-  }
-
-  .ident-tagline strong {
-    color: var(--white);
-  }
-
-  .coord-label {
-    opacity: .45;
-    font-size: 8px;
-  }
-
-  .orbit-4,
-  .orbit-5 {
-    opacity: .55;
-  }
-
-  .gravity-core {
-    opacity: .85;
-  }
+  .sys-bar { margin-bottom: 72px; gap: 14px; max-width: 100%; }
+  .sys-text { font-size: 8px; letter-spacing: .34em; line-height: 1.5; }
+  .sys-line { max-width: 42px; }
+  .ident-pre { font-size: 9px; letter-spacing: .55em; margin-bottom: 18px; }
+  .ident { margin-bottom: 44px; }
+  .ident-giga, .ident-saudi { font-size: clamp(76px, 24vw, 110px); }
+  .ident-tagline { font-size: 17px; line-height: 1.75; max-width: 94%; margin-top: 32px; color: rgba(240,230,200,0.84); }
+  .ident-tagline strong { color: var(--white); }
+  .coord-label { opacity: .45; font-size: 8px; }
+  .orbit-4, .orbit-5 { opacity: .55; }
+  .gravity-core { opacity: .85; }
 }
 </style>
 </head>
 <body>
 
-<!-- CURSOR -->
 <div id="cur"></div>
 <div id="cur-ring"></div>
 
-<!-- ORBITAL CANVAS -->
 <div id="orbital-canvas">
-  <!-- Grid lines -->
   <div class="grid-h" style="top:25%"></div>
   <div class="grid-h" style="top:50%"></div>
   <div class="grid-h" style="top:75%"></div>
   <div class="grid-v" style="left:25%"></div>
   <div class="grid-v" style="left:50%"></div>
   <div class="grid-v" style="left:75%"></div>
-
-  <!-- Coordinate labels -->
   <div class="coord-label" style="top:calc(25% + 6px); left:8px">24.6877° N</div>
   <div class="coord-label" style="top:calc(50% + 6px); left:8px">21.3891° N</div>
   <div class="coord-label" style="top:calc(75% + 6px); left:8px">16.8892° N</div>
   <div class="coord-label" style="top:8px; left:calc(25% + 8px)">39.1925° E</div>
   <div class="coord-label" style="top:8px; left:calc(50% + 8px)">45.0792° E</div>
   <div class="coord-label" style="top:8px; left:calc(75% + 8px)">50.5577° E</div>
-
-  <!-- Gravity core & orbits (centered) -->
   <div style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);">
-    <div class="orbit orbit-1">
-      <div class="node" style="top:-2.5px; left:50%; margin-left:-2.5px;"></div>
-    </div>
-    <div class="orbit orbit-2">
-      <div class="node" style="bottom:-2.5px; left:50%; margin-left:-2.5px;"></div>
-    </div>
-    <div class="orbit orbit-3">
-      <div class="node" style="top:50%; right:-2.5px; margin-top:-2.5px;"></div>
-    </div>
-    <div class="orbit orbit-4">
-      <div class="node" style="top:-2.5px; left:30%; margin-left:-2.5px;"></div>
-    </div>
+    <div class="orbit orbit-1"><div class="node" style="top:-2.5px; left:50%; margin-left:-2.5px;"></div></div>
+    <div class="orbit orbit-2"><div class="node" style="bottom:-2.5px; left:50%; margin-left:-2.5px;"></div></div>
+    <div class="orbit orbit-3"><div class="node" style="top:50%; right:-2.5px; margin-top:-2.5px;"></div></div>
+    <div class="orbit orbit-4"><div class="node" style="top:-2.5px; left:30%; margin-left:-2.5px;"></div></div>
     <div class="orbit orbit-5"></div>
   </div>
   <div style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);">
@@ -995,10 +880,8 @@ body:has(a:hover) #cur-ring { width:60px; height:60px; border-color:rgba(212,168
   </div>
 </div>
 
-<!-- CONTENT -->
 <div id="content">
 
-  <!-- ── 01 ENTRY ── -->
   <section id="s-entry">
     <div class="entry-left">
       <div class="sys-bar">
@@ -1051,7 +934,6 @@ body:has(a:hover) #cur-ring { width:60px; height:60px; border-color:rgba(212,168
     </div>
   </section>
 
-  <!-- ── 02 THEOREM ── -->
   <section id="s-theorem">
     <div class="theorem-inner">
       <div class="theorem-left">
@@ -1061,6 +943,7 @@ body:has(a:hover) #cur-ring { width:60px; height:60px; border-color:rgba(212,168
           Few attempt to redesign the scale at which development itself is imagined.<br><br>
           Saudi Arabia is attempting the second.
         </p>
+        <a href="/why-gigasaudi/" class="inline-strategy-link rx rx-d3">Read the naming logic →</a>
       </div>
       <div class="theorem-right">
         <div class="decode-row rx rx-d1">
@@ -1094,7 +977,6 @@ body:has(a:hover) #cur-ring { width:60px; height:60px; border-color:rgba(212,168
     </div>
   </section>
 
-  <!-- ── 03 ARCHITECTURE ── -->
   <section id="s-architecture">
     <div class="arch-header">
       <div>
@@ -1107,7 +989,6 @@ body:has(a:hover) #cur-ring { width:60px; height:60px; border-color:rgba(212,168
     </div>
 
     <div class="arch-scroll" id="arch-scroll">
-      <!-- Card 01 -->
       <div class="proj-panel rx rx-d1">
         <div class="proj-panel-top">
           <span class="proj-idx">01 · NEOM</span>
@@ -1122,8 +1003,6 @@ body:has(a:hover) #cur-ring { width:60px; height:60px; border-color:rgba(212,168
         </div>
         <div class="proj-bg-num">01</div>
       </div>
-
-      <!-- Card 02 -->
       <div class="proj-panel rx rx-d2">
         <div class="proj-panel-top">
           <span class="proj-idx">02 · NEOM</span>
@@ -1138,8 +1017,6 @@ body:has(a:hover) #cur-ring { width:60px; height:60px; border-color:rgba(212,168
         </div>
         <div class="proj-bg-num">02</div>
       </div>
-
-      <!-- Card 03 -->
       <div class="proj-panel rx rx-d3">
         <div class="proj-panel-top">
           <span class="proj-idx">03 · Heritage</span>
@@ -1154,8 +1031,6 @@ body:has(a:hover) #cur-ring { width:60px; height:60px; border-color:rgba(212,168
         </div>
         <div class="proj-bg-num">03</div>
       </div>
-
-      <!-- Card 04 -->
       <div class="proj-panel rx rx-d4">
         <div class="proj-panel-top">
           <span class="proj-idx">04 · Entertainment</span>
@@ -1170,8 +1045,6 @@ body:has(a:hover) #cur-ring { width:60px; height:60px; border-color:rgba(212,168
         </div>
         <div class="proj-bg-num">04</div>
       </div>
-
-      <!-- Card 05 -->
       <div class="proj-panel rx rx-d5">
         <div class="proj-panel-top">
           <span class="proj-idx">05 · Tourism</span>
@@ -1186,8 +1059,6 @@ body:has(a:hover) #cur-ring { width:60px; height:60px; border-color:rgba(212,168
         </div>
         <div class="proj-bg-num">05</div>
       </div>
-
-      <!-- Card 06 -->
       <div class="proj-panel rx rx-d6">
         <div class="proj-panel-top">
           <span class="proj-idx">06 · Industry</span>
@@ -1205,13 +1076,11 @@ body:has(a:hover) #cur-ring { width:60px; height:60px; border-color:rgba(212,168
     </div>
   </section>
 
-  <!-- ── 04 CAPITAL ── -->
   <section id="s-capital">
     <div class="cap-left">
       <div class="cap-header-label rx">Capital Doctrine</div>
       <div class="cap-big-num rx rx-d1">$900B+</div>
       <div class="cap-big-lbl rx rx-d2">Public Investment Fund — assets under management</div>
-
       <table class="cap-table">
         <tr class="rx rx-d2">
           <td class="td-key">Target 2030</td>
@@ -1243,7 +1112,6 @@ body:has(a:hover) #cur-ring { width:60px; height:60px; border-color:rgba(212,168
         </tr>
       </table>
     </div>
-
     <div class="cap-right">
       <div class="doctrine-pre rx">Governing Doctrine</div>
       <p class="doctrine-body rx rx-d1">
@@ -1252,7 +1120,6 @@ body:has(a:hover) #cur-ring { width:60px; height:60px; border-color:rgba(212,168
         at giga-scale — with the patience of a dynasty<br>
         and the velocity of a startup.
       </p>
-
       <div class="cap-flows">
         <div class="flow-row rx rx-d2">
           <span class="flow-sector">Megaprojects</span>
@@ -1265,12 +1132,12 @@ body:has(a:hover) #cur-ring { width:60px; height:60px; border-color:rgba(212,168
           <span class="flow-amt">$200B+</span>
         </div>
         <div class="flow-row rx rx-d4">
-          <span class="flow-sector">AI & Technology</span>
+          <span class="flow-sector">AI &amp; Technology</span>
           <div class="flow-bar-wrap"><div class="flow-bar" data-width="45"></div></div>
           <span class="flow-amt">$100B+</span>
         </div>
         <div class="flow-row rx rx-d5">
-          <span class="flow-sector">Sports & Culture</span>
+          <span class="flow-sector">Sports &amp; Culture</span>
           <div class="flow-bar-wrap"><div class="flow-bar" data-width="30"></div></div>
           <span class="flow-amt">$40B+</span>
         </div>
@@ -1283,7 +1150,6 @@ body:has(a:hover) #cur-ring { width:60px; height:60px; border-color:rgba(212,168
     </div>
   </section>
 
-  <!-- ── 05 ACQUISITION ── -->
   <section id="s-acquire">
     <div class="acq-header">
       <div class="acq-pre rx">Strategic Availability</div>
@@ -1292,11 +1158,10 @@ body:has(a:hover) #cur-ring { width:60px; height:60px; border-color:rgba(212,168
         The <em>Giga-Scale Era</em>
       </h2>
     </div>
-
     <div class="target-grid">
       <div class="target-cell primary rx">
         <div class="target-coord">TARGET CLASS · ALPHA — PRIMARY</div>
-        <div class="target-type">Sovereign & Institutional</div>
+        <div class="target-type">Sovereign &amp; Institutional</div>
         <div class="target-names">Sovereign capital ecosystems · Giga-project operators · National transformation platforms · Strategic communications offices · Saudi economic media</div>
         <p class="target-rationale">
           Some names do not merely describe a transformation. They become part of how that transformation is understood.
@@ -1321,7 +1186,6 @@ body:has(a:hover) #cur-ring { width:60px; height:60px; border-color:rgba(212,168
         </p>
       </div>
     </div>
-
     <div class="threshold rx rx-d2">
       <div class="thresh-cell">
         <div class="thresh-lbl">Entry Threshold</div>
@@ -1339,7 +1203,6 @@ body:has(a:hover) #cur-ring { width:60px; height:60px; border-color:rgba(212,168
         <div class="thresh-note">Sovereign / institutional buyer</div>
       </div>
     </div>
-
     <div class="acq-cta-wrap rx rx-d3">
       <a href="mailto:inquiries@gigasaudi.com" class="acq-cta">
         <span>→</span>
@@ -1352,7 +1215,6 @@ body:has(a:hover) #cur-ring { width:60px; height:60px; border-color:rgba(212,168
     </div>
   </section>
 
-  <!-- ── FOOTER ── -->
   <footer id="s-footer">
     <div class="ft-logo">Giga<span>Saudi</span></div>
     <div class="ft-center">
@@ -1364,10 +1226,9 @@ body:has(a:hover) #cur-ring { width:60px; height:60px; border-color:rgba(212,168
     </div>
   </footer>
 
-</div><!-- /#content -->
+</div>
 
 <script>
-/* ── CURSOR ── */
 const cur = document.getElementById('cur');
 const ring = document.getElementById('cur-ring');
 let mx=window.innerWidth/2, my=window.innerHeight/2;
@@ -1384,20 +1245,17 @@ document.addEventListener('mousemove', e => {
   requestAnimationFrame(loop);
 })();
 
-/* ── SCROLL PROGRESS ── */
 const fillEl = document.getElementById('scroll-fill');
 window.addEventListener('scroll', () => {
   const p = window.scrollY / (document.body.scrollHeight - window.innerHeight);
   fillEl.style.width = Math.round(p*100)+'%';
 });
 
-/* ── REVEAL OBSERVER ── */
 const obs = new IntersectionObserver(entries => {
   entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('in'); });
 }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
 document.querySelectorAll('.rx').forEach(el => obs.observe(el));
 
-/* ── FLOW BAR ANIMATION ── */
 const flowObs = new IntersectionObserver(entries => {
   entries.forEach(e => {
     if(e.isIntersecting) {
@@ -1408,7 +1266,6 @@ const flowObs = new IntersectionObserver(entries => {
 }, { threshold: 0.3 });
 document.querySelectorAll('.flow-row').forEach(el => flowObs.observe(el));
 
-/* ── STATUS BAR ANIMATION ── */
 const sbObs = new IntersectionObserver(entries => {
   entries.forEach(e => {
     if(e.isIntersecting) {
@@ -1419,7 +1276,6 @@ const sbObs = new IntersectionObserver(entries => {
 }, { threshold: 0.3 });
 document.querySelectorAll('.proj-panel').forEach(el => sbObs.observe(el));
 
-/* ── HORIZONTAL SCROLL NAV ── */
 const archScroll = document.getElementById('arch-scroll');
 document.getElementById('arch-next').addEventListener('click', () => {
   archScroll.scrollBy({ left: 310, behavior: 'smooth' });
@@ -1428,7 +1284,6 @@ document.getElementById('arch-prev').addEventListener('click', () => {
   archScroll.scrollBy({ left: -310, behavior: 'smooth' });
 });
 
-/* ── DRAG TO SCROLL ── */
 let isDown=false, startX, scrollLeft;
 archScroll.addEventListener('mousedown', e => {
   isDown=true; startX=e.pageX-archScroll.offsetLeft; scrollLeft=archScroll.scrollLeft;
