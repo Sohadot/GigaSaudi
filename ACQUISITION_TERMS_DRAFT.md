@@ -10,10 +10,10 @@
 
 | Field | Value |
 |-------|-------|
-| Asset | GigaSaudi.com |
+| Asset | GigaSaudi.com — existing strategic digital asset |
 | Seller | [SELLER LEGAL NAME] |
 | Buyer | [BUYER LEGAL NAME] |
-| Sale Scope | [Option A / B / C — see DIRECT_SALE_PROTOCOL.md] |
+| Transaction Scope | [WRITTEN TRANSACTION SCOPE — agreed and documented before transfer] |
 | Purchase Price | [AGREED PURCHASE PRICE — currency and amount] |
 | Escrow Provider | [ESCROW PROVIDER NAME AND PLATFORM URL] |
 | Escrow Fee Responsibility | [BUYER / SELLER / SPLIT EQUALLY] |
@@ -38,9 +38,14 @@ Organisation: [BUYER ORGANISATION AND DESCRIPTION]
 
 ## 2. Asset Being Acquired
 
-The asset(s) transferred under this agreement are defined by the agreed Sale Scope (Option A, B, or C as specified in the Transaction Summary above) and as described in DIRECT_SALE_PROTOCOL.md.
+GigaSaudi.com is offered as an existing strategic digital asset. The asset being transferred is the domain name and the transferable materials associated with the existing strategic digital asset, as defined in the written transaction scope agreed between the parties and documented before transfer.
 
-For the avoidance of doubt, the asset does not include any official Saudi governmental affiliation, any claims of endorsement by any Saudi public institution, or any representations beyond the domain name and associated files as described.
+Transferable materials are specified in the written transaction terms. No assumption of included scope should be made beyond what is explicitly documented.
+
+For the avoidance of doubt, the asset does not include:
+- Post-sale development, operation, or content production of any kind
+- Any official Saudi governmental affiliation, claims of endorsement by any Saudi public institution, or any representations beyond the domain name and agreed associated materials
+- Any future services, consulting, advisory, or editorial work from the seller unless separately agreed in writing
 
 ---
 
@@ -97,7 +102,8 @@ Closing is conditional on all of the following:
 
 The following are explicitly excluded from this transaction unless separately documented in a written addendum signed by both parties:
 
-- Ongoing consulting, advisory, or operational services from Seller
+- Post-sale development, operation, or content production of any kind
+- Ongoing consulting, advisory, or editorial services from Seller
 - Any claim of official Saudi government, sovereign fund, or institutional affiliation
 - Email accounts, email history, or correspondence associated with the domain
 - Social media handles or accounts (if any)

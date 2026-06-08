@@ -1,16 +1,16 @@
 # GigaSaudi.com
 
-GigaSaudi.com is an independent strategic naming asset and public reference concept for Saudi Arabia's giga-scale era.
+GigaSaudi.com is an independent strategic digital asset and public reference concept for Saudi Arabia's giga-scale era.
 
-This repository contains the public web surface, the naming-thesis page, the category definition page, the source integrity layer, and a public strategic asset dossier explaining the logic, positioning, and acquisition posture of the domain.
+This repository contains the public web surface, the naming-thesis page, the category definition page, the source integrity layer, a public strategic asset dossier, and internal acquisition-support documents for the strategic digital asset.
 
 The project is independent and is not affiliated with, endorsed by, sponsored by, or operated by any official Saudi entity.
  
 ## The Scale Reference for Saudi Arabia's Giga-Scale Era
  
-**GigaSaudi.com** is an independent strategic naming asset and public reference concept built around one of the most visible national transformation narratives of the 21st century: Saudi Arabia's giga-scale era.
+**GigaSaudi.com** is an independent strategic digital asset built around one of the most visible national transformation narratives of the 21st century: Saudi Arabia's giga-scale era.
  
-The project frames **GigaSaudi** not as a conventional domain name, but as a scale-layer asset: a direct, globally readable .com capable of organizing the language around Saudi Arabia's transformation across capital, cities, infrastructure, tourism, energy, technology, sport, culture, media attention, and global perception.
+The project frames **GigaSaudi** not as a conventional domain name, but as a scale-layer asset: a direct, globally readable .com capable of organising the language around Saudi Arabia's transformation across capital, cities, infrastructure, tourism, energy, technology, sport, culture, media attention, and global perception.
   
 ## Core Thesis
  
@@ -41,7 +41,7 @@ It gives a name to the scale at which the Saudi story is already being built.
   
 ## Strategic Positioning
  
-GigaSaudi.com is positioned as a **strategic digital naming asset**, not a low-context domain listing.
+GigaSaudi.com is positioned as a **strategic digital asset**, not a low-context domain listing.
  
 Its value is based on:
  
@@ -120,11 +120,13 @@ It is written as a strategic asset document.
   
 ## Acquisition
  
+GigaSaudi.com is offered as an existing strategic digital asset. It is not offered as a raw domain listing.
+ 
 Qualified direct acquisition inquiries are managed through **Sohadot** (sohadot.com).
  
-Inquiry channel: agent@sohadot.com
+Inquiry channel: **agent@sohadot.com**
  
-All acquisition discussions, transaction scoping, and closing coordination are handled through Sohadot. The acquisition pathway and full protocol are documented at `/availability/` and in the internal acquisition-support documents included in this repository.
+All acquisition discussions, transaction scoping, and closing coordination are handled through Sohadot. Every transaction proceeds through written transaction scope, recognised escrow, controlled transfer, and buyer confirmation before seller payout. The acquisition pathway and full protocol are documented at `/availability/` and in the internal acquisition-support documents included in this repository.
   
 ## Repository Structure
  `/ ├── index.html ├── why-gigasaudi/ │   └── index.html ├── saudi-giga-scale/ │   └── index.html ├── sectors/ │   └── index.html ├── sources/ │   └── index.html ├── availability/ │   └── index.html ├── dossier-print/ │   ├── index.html │   └── dossier.css ├── sitemap.xml ├── DIRECT_SALE_PROTOCOL.md ├── ACQUISITION_TERMS_DRAFT.md ├── CLOSING_CHECKLIST.md ├── CNAME ├── README.md └── gigasaudi_domain_dossier.md `  
@@ -159,16 +161,16 @@ It is designed to embody the thesis:
   
 ## Asset Posture
  
-GigaSaudi.com is available only as a strategic asset.
+GigaSaudi.com is available only as an existing strategic digital asset acquisition.
  
-It is not positioned for public auction, automated marketplace sale, retail domain speculation, or low-context resale.
+It is not positioned for public auction, automated marketplace sale, retail domain speculation, or low-context resale. It is not offered as a raw domain listing.
  
-The preferred acquisition posture is:
+The acquisition posture:
  
  
 - Qualified strategic inquiry through Sohadot
  
-- Organisational context and intended use
+- Organisational context and intended use required
  
 - Written transaction scope
  
@@ -180,13 +182,15 @@ The preferred acquisition posture is:
  
 - Seller payout after buyer confirmation
  
+- No post-sale development or services unless separately agreed
+ 
 
  
-The asset is intended for a qualified acquirer capable of developing, protecting, or institutionalizing the name at the level its category deserves.
+The asset is intended for a qualified acquirer capable of developing, protecting, or institutionalising the name at the level its category deserves.
   
 ## Independence Statement
  
-GigaSaudi.com is an independent strategic naming asset.
+GigaSaudi.com is an independent strategic digital asset.
  
 It is not affiliated with, endorsed by, sponsored by, or operated by any official Saudi government entity, sovereign fund, public institution, project company, or affiliated organization.
  

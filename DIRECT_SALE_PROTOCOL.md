@@ -4,13 +4,13 @@
 **Inquiry Channel:** agent@sohadot.com  
 **Operator Reference:** sohadot.com  
 **Classification:** Internal · Available to qualified buyers upon request  
-**Posture:** Qualified strategic acquisition only · Escrow-protected transfer  
+**Posture:** Strategic digital asset acquisition · Qualified inquiry only · Escrow-protected transfer  
 
 ---
 
 ## Asset
 
-GigaSaudi.com — .com domain registration plus the public strategic reference infrastructure built at that address.
+GigaSaudi.com is an existing strategic digital asset. It is not a raw domain listing. The asset encompasses the domain name, the current public web surface, the strategic positioning framework, the category-native framing and reference materials, and the repository materials developed around Saudi Arabia’s giga-scale transformation.
 
 ---
 
@@ -40,27 +40,26 @@ Inquiries that consist only of a price request, a broker introduction without a 
 
 ---
 
-## Sale Scope Options
+## Transaction Scope
 
-Three scope levels are available. Scope is agreed in writing before transfer proceeds.
+GigaSaudi.com is offered as an existing strategic digital asset. Transaction scope is not a tiered menu of options — it is agreed in writing between the parties and documented before any transfer is initiated.
 
-**Option A — Domain Only**  
-Transfer of the GigaSaudi.com domain registration to the buyer’s registrar.  
-The public website, repository, and associated files are not included.
+The asset being transferred encompasses the domain name and the transferable materials associated with the existing strategic digital asset as built. Transferable components from that asset are defined in the written transaction terms according to what the qualified acquirer requires and what the parties agree in writing.
 
-**Option B — Domain + Public Website Files**  
-Transfer of the domain registration plus the full public website repository (all HTML, CSS, assets, sitemap, and supporting files as currently structured).  
-Buyer may retain, modify, or replace the site at their discretion post-transfer.
+Typical transferable materials include:
+- The domain name and DNS control
+- The current public website repository and all associated files
+- Internal acquisition-support documents prepared for buyer review
 
-**Option C — Domain + Public Website + Structured Transition Package**  
-Option B plus a structured handover: internal acquisition documents, naming thesis background materials, positioning rationale documentation, and a brief transition period for domain DNS guidance.  
-Scope and duration of transition support agreed separately in writing.
+Additional scope (structured handover documentation, transition coordination, or supplementary materials) may be incorporated into the transaction terms when applicable and agreed in writing.
+
+**No post-sale development, operation, consulting, advisory work, or future content production is included in any transaction unless explicitly and separately agreed in writing and added to the transaction terms.**
 
 ---
 
 ## Escrow Requirement
 
-No transfer of any asset scope proceeds without a recognised escrow arrangement in place and buyer funds confirmed as secured.
+No transfer proceeds without a recognised escrow arrangement in place and buyer funds confirmed as secured.
 
 Accepted escrow providers include established domain transaction escrow services recognised by the domain industry. The specific provider is agreed between parties before the transaction opens.
 
@@ -134,8 +133,9 @@ Funds are released from escrow to seller only after:
 
 ## Excluded Items (Unless Separately Agreed)
 
-The following are not included in any sale scope unless explicitly negotiated and documented in the transaction terms:
+The following are not included in any transaction unless explicitly negotiated and documented in the transaction terms:
 
+- Post-sale development, operation, or content production of any kind
 - Ongoing consulting, advisory, or editorial services from the seller
 - Rights to claim any official Saudi government affiliation (which does not exist)
 - Access to private correspondence, inquiry records, or non-public communications
