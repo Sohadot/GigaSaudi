@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Strategic Availability — GigaSaudi.com</title>
+<meta name="description" content="GigaSaudi.com is available only as a qualified strategic acquisition asset. Not a retail domain. A strategic name for Saudi Arabia's giga-scale era.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<style>
+:root {
+  --void: #04030a;
+  --gold: #d4a843;
+  --gold-hi: #f5d060;
+  --gold-lo: #7a5c1e;
+  --gold-trace: rgba(212,168,67,0.12);
+  --sand: #f0e6c8;
+  --sand-lo: #9a8c70;
+  --white: #fefcf4;
+  --line-gold: rgba(212,168,67,0.22);
+  --line-dim: rgba(240,230,200,0.06);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--void);
+  color: var(--sand);
+  font-family: 'Share Tech Mono', monospace;
+  overflow-x: hidden;
+  cursor: none;
+}
+
+body::before {
+  content: '';
+  position: fixed; inset: 0;
+  opacity: 0.06;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  pointer-events: none; z-index: 9900;
+}
+
+#cur { position:fixed; width:6px; height:6px; border-radius:50%; background:var(--gold); pointer-events:none; z-index:9999; transform:translate(-50%,-50%); transition:width .2s,height .2s; mix-blend-mode:screen; }
+#cur-ring { position:fixed; width:40px; height:40px; border:1px solid rgba(212,168,67,0.4); border-radius:50%; pointer-events:none; z-index:9998; transform:translate(-50%,-50%); transition:width .4s,height .4s,border-color .3s; }
+body:has(a:hover) #cur { width:12px; height:12px; }
+body:has(a:hover) #cur-ring { width:60px; height:60px; border-color:rgba(212,168,67,0.8); }
+
+#orbital-canvas {
+  position: fixed; inset: 0; z-index: 0;
+  overflow: hidden; opacity: 0.42;
+}
+.gravity-core {
+  position: absolute; top:50%; left:50%;
+  transform: translate(-50%,-50%);
+  width:3px; height:3px;
+  background:var(--gold); border-radius:50%;
+  box-shadow: 0 0 0 12px rgba(212,168,67,0.05), 0 0 0 40px rgba(212,168,67,0.03), 0 0 60px 15px rgba(212,168,67,0.28);
+}
+.orbit {
+  position:absolute; top:50%; left:50%;
+  border:1px solid; border-radius:50%;
+  transform-origin:center center;
+}
+.orbit-1 { width:180px; height:180px; margin:-90px 0 0 -90px; border-color:rgba(212,168,67,0.14); animation:spin 40s linear infinite; }
+.orbit-2 { width:380px; height:380px; margin:-190px 0 0 -190px; border-color:rgba(212,168,67,0.08); animation:spin 70s linear infinite reverse; }
+.orbit-3 { width:620px; height:620px; margin:-310px 0 0 -310px; border-color:rgba(212,168,67,0.05); animation:spin 110s linear infinite; }
+.orbit-4 { width:900px; height:900px; margin:-450px 0 0 -450px; border-color:rgba(212,168,67,0.025); animation:spin 160s linear infinite reverse; }
+.node { position:absolute; width:4px; height:4px; background:var(--gold); border-radius:50%; box-shadow:0 0 8px 2px rgba(212,168,67,0.5); }
+.grid-h,.grid-v { position:absolute; background:rgba(240,230,200,0.04); }
+.grid-h { left:0; right:0; height:1px; }
+.grid-v { top:0; bottom:0; width:1px; }
+.coord-label { position:absolute; font-family:'Share Tech Mono',monospace; font-size:8px; color:rgba(212,168,67,0.13); letter-spacing:0.15em; pointer-events:none; }
+@keyframes spin { to { transform:rotate(360deg); } }
+@keyframes pulse-core {
+  0%,100% { box-shadow:0 0 0 12px rgba(212,168,67,0.05), 0 0 60px 15px rgba(212,168,67,0.28); }
+  50% { box-shadow:0 0 0 20px rgba(212,168,67,0.07), 0 0 80px 20px rgba(212,168,67,0.38); }
+}
+
+#content { position:relative; z-index:10; }
+
+.doc-nav {
+  position:fixed; top:0; left:0; right:0; z-index:100;
+  padding:20px 60px;
+  display:flex; align-items:center; justify-content:space-between;
+  background:linear-gradient(to bottom, rgba(4,3,10,0.94) 0%, transparent 100%);
+  backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);
+}
+.return-link {
+  font-size:9px; letter-spacing:.35em; color:var(--gold-lo);
+  text-decoration:none; text-transform:uppercase;
+  display:flex; align-items:center; gap:10px;
+  transition:color .3s;
+}
+.return-link:hover { color:var(--gold); }
+.nav-brand {
+  font-family:'Bebas Neue',sans-serif; font-size:18px;
+  color:var(--gold); letter-spacing:.08em; text-decoration:none;
+}
+.nav-brand span { color:rgba(212,168,67,0.45); }
+.nav-cta {
+  font-size:9px; letter-spacing:.3em; color:var(--gold);
+  text-decoration:none; text-transform:uppercase;
+  border-bottom:1px solid rgba(212,168,67,.3); padding-bottom:4px;
+  transition:border-color .3s;
+}
+.nav-cta:hover { border-color:var(--gold); }
+
+.doc-wrap { max-width:800px; margin:0 auto; padding:148px 60px 120px; }
+
+.doc-hero { margin-bottom:80px; padding-bottom:72px; border-bottom:1px solid var(--line-dim); }
+.doc-eyebrow {
+  font-size:9px; letter-spacing:.5em; color:var(--gold);
+  text-transform:uppercase; margin-bottom:28px;
+  display:flex; align-items:center; gap:16px;
+  opacity:0; animation:fadeSlide .8s ease .2s forwards;
+}
+.doc-eyebrow::before { content:''; width:28px; height:1px; background:var(--gold); flex-shrink:0; }
+.doc-headline {
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(60px,11vw,128px);
+  line-height:.88; letter-spacing:.03em;
+  color:var(--white); margin-bottom:32px;
+  opacity:0; animation:fadeSlide .9s ease .35s forwards;
+}
+.doc-headline em { color:transparent; -webkit-text-stroke:1.5px var(--gold); font-style:normal; }
+.doc-subhead {
+  font-family:'Share Tech Mono',monospace;
+  font-size:10px; letter-spacing:.32em;
+  text-transform:uppercase; color:var(--gold);
+  margin-bottom:24px;
+  opacity:0; animation:fadeSlide .8s ease .52s forwards;
+}
+.doc-opening {
+  font-family:'EB Garamond',serif;
+  font-size:clamp(17px,2.2vw,21px);
+  font-style:italic; line-height:1.72;
+  color:var(--sand-lo); max-width:620px;
+  opacity:0; animation:fadeSlide .9s ease .68s forwards;
+}
+.doc-opening strong { color:var(--sand); font-style:normal; font-weight:500; }
+
+.doc-axiom {
+  margin-bottom:88px; padding:52px 0;
+  border-top:1px solid var(--line-gold);
+  border-bottom:1px solid var(--line-gold);
+  text-align:center;
+}
+.axiom-label { font-size:9px; letter-spacing:.45em; color:var(--gold-lo); text-transform:uppercase; margin-bottom:22px; }
+.axiom-text {
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(30px,5.5vw,60px);
+  color:var(--gold-hi); letter-spacing:.04em; line-height:1.1;
+}
+
+.doc-section { margin-bottom:68px; padding-bottom:68px; border-bottom:1px solid var(--line-dim); }
+.doc-section.last { border-bottom:none; margin-bottom:0; padding-bottom:0; }
+
+.sec-num {
+  font-size:9px; letter-spacing:.45em; color:var(--gold);
+  text-transform:uppercase; margin-bottom:22px;
+  display:flex; align-items:center; gap:14px;
+}
+.sec-num::before { content:''; width:22px; height:1px; background:var(--gold); flex-shrink:0; }
+
+.sec-title {
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(28px,4vw,46px);
+  color:var(--white); letter-spacing:.04em; line-height:1;
+  margin-bottom:28px;
+}
+
+.sec-body {
+  font-family:'EB Garamond',serif;
+  font-size:18px; line-height:1.8; color:var(--sand-lo);
+}
+.sec-body p { margin-bottom:18px; }
+.sec-body p:last-child { margin-bottom:0; }
+.sec-body strong { color:var(--sand); font-weight:500; }
+.sec-body em { color:var(--gold-hi); font-style:italic; }
+
+.pull-quote {
+  margin:32px 0; padding:26px 32px;
+  border-left:2px solid var(--gold);
+  background:rgba(212,168,67,0.04);
+}
+.pull-quote p {
+  font-family:'EB Garamond',serif;
+  font-size:clamp(17px,2.2vw,22px);
+  font-style:italic; color:var(--sand); line-height:1.65; margin:0 !important;
+}
+
+.qualifier-list { display:flex; flex-direction:column; gap:0; margin-top:28px; }
+.qualifier-item { padding:20px 0; border-bottom:1px solid var(--line-dim); display:flex; align-items:flex-start; gap:20px; }
+.qualifier-item:first-child { border-top:1px solid var(--line-dim); }
+.qual-marker { font-size:9px; letter-spacing:.35em; color:var(--gold); text-transform:uppercase; min-width:32px; padding-top:3px; flex-shrink:0; }
+.qual-text { font-family:'EB Garamond',serif; font-size:17px; line-height:1.75; color:var(--sand-lo); }
+.qual-text strong { color:var(--sand); font-weight:500; }
+
+.no-list { display:flex; flex-direction:column; gap:0; margin:28px 0; }
+.no-item { display:flex; align-items:center; gap:16px; padding:13px 0; border-bottom:1px solid var(--line-dim); font-size:10px; letter-spacing:.28em; color:var(--sand-lo); text-transform:uppercase; }
+.no-item:first-child { border-top:1px solid var(--line-dim); }
+.no-mark { font-size:11px; color:var(--gold-lo); flex-shrink:0; }
+
+.protocol-list { display:flex; flex-direction:column; gap:0; margin-top:28px; }
+.proto-step { display:flex; align-items:flex-start; gap:24px; padding:18px 0; border-bottom:1px solid var(--line-dim); }
+.proto-step:first-child { border-top:1px solid var(--line-dim); }
+.proto-num { font-family:'Bebas Neue',sans-serif; font-size:22px; color:var(--gold); letter-spacing:.04em; min-width:44px; line-height:1.15; }
+.proto-text { font-family:'EB Garamond',serif; font-size:17px; line-height:1.75; color:var(--sand-lo); padding-top:2px; }
+
+.inq-block { border:1px solid rgba(212,168,67,0.25); padding:52px 44px; background:rgba(212,168,67,0.03); margin-top:28px; }
+.inq-pre { font-size:9px; letter-spacing:.45em; color:var(--gold); text-transform:uppercase; margin-bottom:22px; }
+.inq-note { font-family:'EB Garamond',serif; font-size:16px; line-height:1.8; color:var(--sand-lo); margin-top:24px; }
+.inq-cta { display:inline-flex; align-items:center; gap:16px; padding:18px 48px; border:1px solid var(--gold); color:var(--gold); font-family:'Share Tech Mono',monospace; font-size:11px; letter-spacing:.3em; text-transform:uppercase; text-decoration:none; position:relative; overflow:hidden; transition:color .4s; }
+.inq-cta::before { content:''; position:absolute; inset:0; background:var(--gold); transform:translateX(-100%); transition:transform .4s ease; z-index:-1; }
+.inq-cta:hover { color:var(--void); }
+.inq-cta:hover::before { transform:translateX(0); }
+
+.nav-links { display:flex; flex-direction:column; gap:0; margin-top:28px; }
+.nav-link {
+  display:flex; align-items:center; gap:24px;
+  padding:24px 0; border-bottom:1px solid var(--line-dim);
+  text-decoration:none; transition:all .3s;
+}
+.nav-link:first-child { border-top:1px solid var(--line-dim); }
+.nav-link:hover { padding-left:8px; }
+.nl-num { font-size:9px; letter-spacing:.3em; color:var(--gold-lo); min-width:28px; }
+.nl-body { flex:1; }
+.nl-title {
+  font-family:'EB Garamond',serif; font-size:18px; color:var(--sand);
+  font-style:italic; margin-bottom:4px;
+  transition:color .3s;
+}
+.nav-link:hover .nl-title { color:var(--gold); }
+.nl-path { font-size:9px; letter-spacing:.2em; color:var(--gold-lo); text-transform:uppercase; }
+.nl-arr { font-size:16px; color:var(--gold-lo); transition:color .3s; }
+.nav-link:hover .nl-arr { color:var(--gold); }
+
+.doc-footer {
+  border-top:1px solid var(--line-dim); padding:40px 60px;
+  display:flex; align-items:center; justify-content:space-between; gap:40px;
+}
+.ft-brand {
+  font-family:'Bebas Neue',sans-serif; font-size:20px;
+  color:var(--gold); letter-spacing:.08em; text-decoration:none;
+}
+.ft-brand span { color:rgba(212,168,67,0.45); }
+.ft-disc { font-size:9px; color:rgba(212,168,67,0.38); letter-spacing:.08em; line-height:1.75; max-width:440px; text-align:right; }
+
+@keyframes fadeSlide { from{opacity:0;transform:translateY(20px);} to{opacity:1;transform:translateY(0);} }
+.rx { opacity:0; transform:translateY(28px); transition:opacity .9s ease,transform .9s ease; }
+.rx.in { opacity:1; transform:translateY(0); }
+.rx-d1 { transition-delay:.1s; }
+.rx-d2 { transition-delay:.2s; }
+.rx-d3 { transition-delay:.3s; }
+.rx-d4 { transition-delay:.4s; }
+.rx-d5 { transition-delay:.5s; }
+
+@media (max-width:900px) {
+  body { cursor:auto; }
+  #cur,#cur-ring { display:none; }
+  .doc-nav { padding:16px 24px; }
+  .nav-cta { display:none; }
+  .doc-wrap { padding:120px 24px 80px; }
+  .inq-block { padding:36px 24px; }
+  .doc-footer { padding:32px 24px; flex-direction:column; align-items:flex-start; gap:20px; }
+  .ft-disc { text-align:left; max-width:100%; }
+}
+</style>
+</head>
+<body>
+
+<div id="cur"></div>
+<div id="cur-ring"></div>
+
+<div id="orbital-canvas">
+  <div class="grid-h" style="top:33%"></div>
+  <div class="grid-h" style="top:66%"></div>
+  <div class="grid-v" style="left:50%"></div>
+  <div class="coord-label" style="top:calc(33% + 5px); left:8px">21.3891° N</div>
+  <div class="coord-label" style="top:8px; left:calc(50% + 8px)">45.0792° E</div>
+  <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);">
+    <div class="orbit orbit-1"><div class="node" style="top:-2px;left:50%;margin-left:-2px;"></div></div>
+    <div class="orbit orbit-2"><div class="node" style="bottom:-2px;left:50%;margin-left:-2px;"></div></div>
+    <div class="orbit orbit-3"><div class="node" style="top:50%;right:-2px;margin-top:-2px;"></div></div>
+    <div class="orbit orbit-4"></div>
+  </div>
+  <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);">
+    <div class="gravity-core" style="animation:pulse-core 4s ease-in-out infinite;"></div>
+  </div>
+</div>
+
+<nav class="doc-nav">
+  <a href="/" class="return-link">← GigaSaudi</a>
+  <a href="/" class="nav-brand">Giga<span>Saudi</span></a>
+  <a href="mailto:inquiries@gigasaudi.com" class="nav-cta">Inquire →</a>
+</nav>
+
+<div id="content">
+  <div class="doc-wrap">
+
+    <header class="doc-hero">
+      <div class="doc-eyebrow">Strategic Availability · Qualified Acquisition</div>
+      <h1 class="doc-headline">Strategic<br><em>Availability</em></h1>
+      <div class="doc-subhead">GigaSaudi.com is not positioned as a retail domain listing.</div>
+      <p class="doc-opening">
+        This is not a domain for sale in any ordinary sense.<br>
+        <strong>GigaSaudi.com is available only as a qualified strategic acquisition.</strong>
+      </p>
+    </header>
+
+    <div class="doc-axiom rx">
+      <div class="axiom-label">Positioning</div>
+      <div class="axiom-text">Available only as a<br>qualified strategic<br>acquisition.</div>
+    </div>
+
+    <section class="doc-section rx rx-d1">
+      <div class="sec-num">01 — What Is Available</div>
+      <h2 class="sec-title">What Is Available</h2>
+      <div class="sec-body">
+        <p>GigaSaudi.com is a .com naming coordinate at the intersection of the two most strategically resonant terms in Saudi Arabia's transformation era: "Giga" — the language of scale — and "Saudi" — the sovereign anchor of that transformation.</p>
+        <div class="pull-quote">
+          <p>This is the naming layer. Not one project. Not one sector. The name for the scale above the projects.</p>
+        </div>
+        <p>The asset includes the domain, this public reference infrastructure, and the strategic positioning developed to establish the name as a category anchor.</p>
+        <p>It is available for transfer to a single qualified acquirer capable of developing it at the scale the category deserves.</p>
+      </div>
+    </section>
+
+    <section class="doc-section rx rx-d2">
+      <div class="sec-num">02 — Qualified Acquirer Profile</div>
+      <h2 class="sec-title">Qualified Acquirer Profile</h2>
+      <div class="sec-body">
+        <p>Not every interested party is a qualified acquirer. The name's strategic value depends on it being developed, protected, and deployed with intent.</p>
+      </div>
+      <div class="qualifier-list">
+        <div class="qualifier-item">
+          <div class="qual-marker">01</div>
+          <div class="qual-text"><strong>Strategic relevance.</strong> The acquirer operates within, serves, or communicates about Saudi Arabia's giga-scale transformation era across capital, cities, energy, technology, tourism, sport, culture, logistics, or infrastructure.</div>
+        </div>
+        <div class="qualifier-item">
+          <div class="qual-marker">02</div>
+          <div class="qual-text"><strong>Capacity to develop.</strong> The acquirer has the resources and organisational capability to deploy the asset at institutional scale — not to hold it dormant or redirect it to a lower-value purpose.</div>
+        </div>
+        <div class="qualifier-item">
+          <div class="qual-marker">03</div>
+          <div class="qual-text"><strong>Ability to protect.</strong> The acquirer can maintain and defend the naming asset with legal, technical, and brand infrastructure appropriate to its category value.</div>
+        </div>
+        <div class="qualifier-item">
+          <div class="qual-marker">04</div>
+          <div class="qual-text"><strong>Clear use case.</strong> The acquirer has a defined and credible deployment context: a platform, a brand, an editorial layer, a communications infrastructure, an intelligence product, or an institutional asset.</div>
+        </div>
+        <div class="qualifier-item">
+          <div class="qual-marker">05</div>
+          <div class="qual-text"><strong>Intended deployment.</strong> The acquirer intends to activate the asset — not to park, resell, or warehouse it at a lower-value holding level than its strategic category warrants.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="doc-section rx rx-d1">
+      <div class="sec-num">03 — Acquisition Posture</div>
+      <h2 class="sec-title">Acquisition Posture</h2>
+      <div class="sec-body">
+        <p>The acquisition posture for GigaSaudi.com is defined by what this asset is not, and how a transfer will proceed.</p>
+      </div>
+      <div class="no-list">
+        <div class="no-item"><div class="no-mark">—</div>No public auction or open bidding</div>
+        <div class="no-item"><div class="no-mark">—</div>No retail domain marketplace listing</div>
+        <div class="no-item"><div class="no-mark">—</div>No low-context or speculative resale</div>
+        <div class="no-item"><div class="no-mark">—</div>No transfer without verified identity and escrow</div>
+      </div>
+      <div class="sec-body" style="margin-top:28px;">
+        <p>Transfer proceeds according to the following protocol:</p>
+      </div>
+      <div class="protocol-list">
+        <div class="proto-step">
+          <div class="proto-num">01</div>
+          <div class="proto-text">Qualified inquiry submitted via the contact channel below, with context about the acquirer's identity and intended use.</div>
+        </div>
+        <div class="proto-step">
+          <div class="proto-num">02</div>
+          <div class="proto-text">Initial review of acquirer profile against the qualified acquirer criteria.</div>
+        </div>
+        <div class="proto-step">
+          <div class="proto-num">03</div>
+          <div class="proto-text">Confidential discussion of acquisition terms, asset scope, and transfer conditions.</div>
+        </div>
+        <div class="proto-step">
+          <div class="proto-num">04</div>
+          <div class="proto-text">Agreed terms documented and verified identity confirmed on both sides.</div>
+        </div>
+        <div class="proto-step">
+          <div class="proto-num">05</div>
+          <div class="proto-text">Secure escrow arrangement established through a recognised domain transfer intermediary.</div>
+        </div>
+        <div class="proto-step">
+          <div class="proto-num">06</div>
+          <div class="proto-text">Domain and associated assets transferred in full upon escrow confirmation.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="doc-section rx rx-d2">
+      <div class="sec-num">04 — Why Qualification Is Required</div>
+      <h2 class="sec-title">Why Qualification Is Required</h2>
+      <div class="sec-body">
+        <p>GigaSaudi.com is not a commodity. It is a category name.</p>
+        <div class="pull-quote">
+          <p>A category name transferred to the wrong acquirer is a category name destroyed. A category name in the hands of the right acquirer becomes infrastructure.</p>
+        </div>
+        <p>The qualification requirement exists to protect the strategic integrity of the asset — for the acquirer as much as for the category itself.</p>
+        <p>A name that names Saudi Arabia's giga-scale era at the highest level of abstraction carries a weight that most domain transactions do not. The qualification process is how that weight is acknowledged at the point of transfer.</p>
+      </div>
+    </section>
+
+    <section class="doc-section rx rx-d3">
+      <div class="sec-num">05 — Begin A Qualified Inquiry</div>
+      <h2 class="sec-title">Begin A Qualified Inquiry</h2>
+      <div class="inq-block">
+        <div class="inq-pre">Inquiry Channel · Confidential</div>
+        <a href="mailto:inquiries@gigasaudi.com?subject=GigaSaudi.com%20Qualified%20Acquisition%20Inquiry" class="inq-cta">
+          <span>→</span>
+          <span>Begin Qualified Inquiry</span>
+        </a>
+        <p class="inq-note">Inquiries are reviewed for strategic fit before a response is issued. Include your organisation, intended use, and acquisition context. Confidential. No public disclosure.</p>
+      </div>
+    </section>
+
+    <section class="doc-section last rx rx-d2">
+      <div class="sec-num">06 — Supporting Context</div>
+      <h2 class="sec-title">Supporting Context</h2>
+      <div class="nav-links">
+        <a href="/why-gigasaudi/" class="nav-link">
+          <div class="nl-num">01</div>
+          <div class="nl-body">
+            <div class="nl-title">The Naming Thesis</div>
+            <div class="nl-path">/why-gigasaudi/ — Why GigaSaudi is a strategic name for this category</div>
+          </div>
+          <div class="nl-arr">→</div>
+        </a>
+        <a href="/saudi-giga-scale/" class="nav-link">
+          <div class="nl-num">02</div>
+          <div class="nl-body">
+            <div class="nl-title">The Transformation Field</div>
+            <div class="nl-path">/saudi-giga-scale/ — What Saudi giga-scale is as a category</div>
+          </div>
+          <div class="nl-arr">→</div>
+        </a>
+        <a href="/sectors/" class="nav-link">
+          <div class="nl-num">03</div>
+          <div class="nl-body">
+            <div class="nl-title">The Sector Map</div>
+            <div class="nl-path">/sectors/ — The ten sectors of Saudi Arabia's giga-scale era</div>
+          </div>
+          <div class="nl-arr">→</div>
+        </a>
+        <a href="/sources/" class="nav-link">
+          <div class="nl-num">04</div>
+          <div class="nl-body">
+            <div class="nl-title">Source Integrity</div>
+            <div class="nl-path">/sources/ — The claim standards and sourcing framework behind this site</div>
+          </div>
+          <div class="nl-arr">→</div>
+        </a>
+      </div>
+    </section>
+
+  </div>
+
+  <footer class="doc-footer">
+    <a href="/" class="ft-brand">Giga<span>Saudi</span></a>
+    <p class="ft-disc">Independent strategic naming asset. Not affiliated with, endorsed by, or operated by any official Saudi entity. This page represents the perspective of the domain owner on the strategic value of the name.</p>
+  </footer>
+</div>
+
+<script>
+const cur = document.getElementById('cur');
+const ring = document.getElementById('cur-ring');
+let mx = window.innerWidth/2, my = window.innerHeight/2;
+let rx_ = mx, ry = my;
+document.addEventListener('mousemove', e => {
+  mx = e.clientX; my = e.clientY;
+  cur.style.left = mx+'px'; cur.style.top = my+'px';
+});
+(function loop(){
+  rx_ += (mx-rx_)*0.1; ry += (my-ry)*0.1;
+  ring.style.left = rx_+'px'; ring.style.top = ry+'px';
+  requestAnimationFrame(loop);
+})();
+
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('in'); });
+}, { threshold:0.08, rootMargin:'0px 0px -40px 0px' });
+document.querySelectorAll('.rx').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
