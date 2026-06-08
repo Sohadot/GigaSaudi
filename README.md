@@ -6,11 +6,11 @@ This repository contains the public web surface, the naming-thesis page, the cat
 
 The project is independent and is not affiliated with, endorsed by, sponsored by, or operated by any official Saudi entity.
  
-## The Scale Reference for Saudi Arabia’s Giga-Scale Era
+## The Scale Reference for Saudi Arabia's Giga-Scale Era
  
-**GigaSaudi.com** is an independent strategic naming asset and public reference concept built around one of the most visible national transformation narratives of the 21st century: Saudi Arabia’s giga-scale era.
+**GigaSaudi.com** is an independent strategic naming asset and public reference concept built around one of the most visible national transformation narratives of the 21st century: Saudi Arabia's giga-scale era.
  
-The project frames **GigaSaudi** not as a conventional domain name, but as a scale-layer asset: a direct, globally readable .com capable of organizing the language around Saudi Arabia’s transformation across capital, cities, infrastructure, tourism, energy, technology, sport, culture, media attention, and global perception.
+The project frames **GigaSaudi** not as a conventional domain name, but as a scale-layer asset: a direct, globally readable .com capable of organizing the language around Saudi Arabia's transformation across capital, cities, infrastructure, tourism, energy, technology, sport, culture, media attention, and global perception.
   
 ## Core Thesis
  
@@ -79,11 +79,19 @@ This repository contains the public presentation layer for GigaSaudi.com.
  
 - `/why-gigasaudi/` — Naming thesis and strategic logic
  
+- `/saudi-giga-scale/` — The transformation field category definition
+ 
+- `/sectors/` — Sector map of Saudi Arabia's giga-scale era
+ 
+- `/sources/` — Source integrity and claim registry
+ 
+- `/availability/` — Strategic acquisition posture and qualified inquiry
+ 
 - `/dossier-print/` — Public strategic asset dossier presentation layer
  
 
  
-The public website is designed to communicate the asset’s conceptual value, category logic, and strategic availability without positioning the project as a retail domain sale.
+The public website is designed to communicate the asset's conceptual value, category logic, and strategic availability without positioning the project as a retail domain sale.
   
 ## Public Strategic Asset Dossier
  
@@ -94,9 +102,9 @@ The dossier exists to explain:
  
 - Why the name works linguistically
  
-- Why “Giga” is structurally aligned with the Saudi transformation context
+- Why "Giga" is structurally aligned with the Saudi transformation context
  
-- Why “Saudi” gives the compound sovereign specificity
+- Why "Saudi" gives the compound sovereign specificity
  
 - Why the name sits above individual projects and sectors
  
@@ -111,7 +119,7 @@ The dossier is public-facing, but it is not written as consumer marketing.
 It is written as a strategic asset document.
   
 ## Repository Structure
- `/ ├── index.html ├── why-gigasaudi/ │   └── index.html ├── dossier-print/ │   ├── index.html │   └── dossier.css ├── CNAME ├── README.md └── gigasaudi_domain_dossier.md `  
+ `/ ├── index.html ├── why-gigasaudi/ │   └── index.html ├── saudi-giga-scale/ │   └── index.html ├── sectors/ │   └── index.html ├── sources/ │   └── index.html ├── availability/ │   └── index.html ├── dossier-print/ │   ├── index.html │   └── dossier.css ├── sitemap.xml ├── CNAME ├── README.md └── gigasaudi_domain_dossier.md `  
 ## Design Doctrine
  
 The visual system follows a sovereign-scale identity:
@@ -180,4 +188,4 @@ The project is offered as an independent digital naming and reference opportunit
 **GigaSaudi.com does not merely identify a website. It identifies a scale layer.**
  
   
-**GigaSaudi.com** *The Scale Reference for Saudi Arabia’s Giga-Scale Era*
+**GigaSaudi.com** *The Scale Reference for Saudi Arabia's Giga-Scale Era*
