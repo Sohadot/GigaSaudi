@@ -118,8 +118,16 @@ The dossier is public-facing, but it is not written as consumer marketing.
  
 It is written as a strategic asset document.
   
+## Acquisition
+ 
+Qualified direct acquisition inquiries are managed through **Sohadot** (sohadot.com).
+ 
+Inquiry channel: agent@sohadot.com
+ 
+All acquisition discussions, transaction scoping, and closing coordination are handled through Sohadot. The acquisition pathway and full protocol are documented at `/availability/` and in the internal acquisition-support documents included in this repository.
+  
 ## Repository Structure
- `/ ├── index.html ├── why-gigasaudi/ │   └── index.html ├── saudi-giga-scale/ │   └── index.html ├── sectors/ │   └── index.html ├── sources/ │   └── index.html ├── availability/ │   └── index.html ├── dossier-print/ │   ├── index.html │   └── dossier.css ├── sitemap.xml ├── CNAME ├── README.md └── gigasaudi_domain_dossier.md `  
+ `/ ├── index.html ├── why-gigasaudi/ │   └── index.html ├── saudi-giga-scale/ │   └── index.html ├── sectors/ │   └── index.html ├── sources/ │   └── index.html ├── availability/ │   └── index.html ├── dossier-print/ │   ├── index.html │   └── dossier.css ├── sitemap.xml ├── DIRECT_SALE_PROTOCOL.md ├── ACQUISITION_TERMS_DRAFT.md ├── CLOSING_CHECKLIST.md ├── CNAME ├── README.md └── gigasaudi_domain_dossier.md `  
 ## Design Doctrine
  
 The visual system follows a sovereign-scale identity:
@@ -158,17 +166,19 @@ It is not positioned for public auction, automated marketplace sale, retail doma
 The preferred acquisition posture is:
  
  
-- Qualified strategic inquiry
+- Qualified strategic inquiry through Sohadot
  
-- Organizational context
+- Organisational context and intended use
  
-- Intended deployment
+- Written transaction scope
  
-- Verified escrow transfer
+- Recognised escrow process
  
-- No public auction
+- Verified identity on both sides
  
-- No retail listing
+- Controlled domain transfer
+ 
+- Seller payout after buyer confirmation
  
 
  
