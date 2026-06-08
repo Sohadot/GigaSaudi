@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sources &amp; Claim Registry — GigaSaudi.com</title>
+  <meta name="description" content="Source posture and claim registry for GigaSaudi.com. Every major assertion on this site is verified, qualified, or identified as analytical framing.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --void: #07060f;
+      --gold: #d4a843;
+      --gold-hi: #f0c860;
+      --gold-lo: #a07830;
+      --sand: #c8a878;
+      --sand-lo: #705040;
+      --white: #f4efe8;
+      --line-gold: rgba(212,168,67,.18);
+      --line-dim: rgba(255,255,255,.06);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--void);
+      color: var(--white);
+      font-family: 'EB Garamond', Georgia, serif;
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    canvas#orb {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      opacity: .42;
+      pointer-events: none;
+    }
+
+    /* ── Nav ────────────────────────────────────────── */
+    .doc-nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 48px;
+      background: rgba(7,6,15,.82);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--line-gold);
+    }
+    .nav-return, .nav-cta {
+      color: var(--sand);
+      text-decoration: none;
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 11px;
+      letter-spacing: .24em;
+      text-transform: uppercase;
+      transition: color .3s;
+    }
+    .nav-return:hover, .nav-cta:hover { color: var(--gold); }
+    .nav-cta {
+      border-bottom: 1px solid rgba(212,168,67,.28);
+      padding-bottom: 2px;
+    }
+    .nav-brand {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 18px;
+      letter-spacing: .14em;
+      color: var(--gold);
+      text-decoration: none;
+    }
+
+    /* ── Document column ────────────────────────────── */
+    .doc {
+      position: relative;
+      z-index: 10;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 148px 60px 100px;
+    }
+
+    /* ── Hero ─────────────────────────────────────── */
+    .doc-hero { margin-bottom: 80px; }
+
+    .doc-kicker {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 10px;
+      letter-spacing: .36em;
+      text-transform: uppercase;
+      color: var(--gold-lo);
+      margin-bottom: 22px;
+    }
+
+    .doc-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(54px, 7vw, 82px);
+      line-height: .9;
+      letter-spacing: .04em;
+      color: var(--white);
+      margin-bottom: 26px;
+    }
+    .doc-title em {
+      font-style: normal;
+      color: transparent;
+      -webkit-text-stroke: 1.5px var(--gold);
+    }
+
+    .doc-subhead {
+      font-size: 19px;
+      color: var(--sand);
+      line-height: 1.58;
+      max-width: 580px;
+      font-style: italic;
+    }
+
+    /* ── Sections ───────────────────────────────────── */
+    .sec {
+      margin-bottom: 72px;
+      padding-bottom: 72px;
+      border-bottom: 1px solid var(--line-gold);
+    }
+    .sec:last-of-type { border-bottom: none; margin-bottom: 0; }
+
+    .sec-num {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 10px;
+      letter-spacing: .32em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .sec-num::after {
+      content: '';
+      display: block;
+      height: 1px;
+      width: 44px;
+      background: var(--gold);
+      opacity: .35;
+    }
+
+    .sec-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 36px;
+      letter-spacing: .06em;
+      color: var(--white);
+      margin-bottom: 24px;
+      line-height: 1;
+    }
+
+    .sec-body {
+      font-size: 17px;
+      line-height: 1.72;
+      color: var(--sand);
+      margin-bottom: 20px;
+    }
+    .sec-body:last-child { margin-bottom: 0; }
+    .sec-body strong { color: var(--white); font-weight: 500; }
+
+    .sec h3 {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 10px;
+      letter-spacing: .28em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin: 36px 0 16px;
+      opacity: .85;
+    }
+
+    /* ── Claim Types ───────────────────────────────── */
+    .claim-types { display: grid; gap: 16px; margin: 28px 0; }
+
+    .claim-type {
+      padding: 22px 24px;
+      border: 1px solid var(--line-gold);
+      border-left: 2px solid var(--gold);
+    }
+    .ct-label {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 9px;
+      letter-spacing: .3em;
+      text-transform: uppercase;
+      color: var(--gold-lo);
+      margin-bottom: 8px;
+    }
+    .ct-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 22px;
+      letter-spacing: .06em;
+      color: var(--white);
+      margin-bottom: 10px;
+    }
+    .ct-body {
+      font-size: 15px;
+      color: var(--sand);
+      line-height: 1.65;
+    }
+    .ct-body em {
+      font-style: italic;
+      color: var(--sand-lo);
+      display: block;
+      margin-top: 10px;
+    }
+
+    /* ── Language Rules ────────────────────────────── */
+    .lang-rules {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin: 28px 0;
+    }
+    .lang-block { padding: 20px 22px; }
+    .lang-block.pref { border: 1px solid rgba(212,168,67,.22); background: rgba(212,168,67,.04); }
+    .lang-block.avd  { border: 1px solid var(--line-dim); background: rgba(0,0,0,.25); }
+
+    .lang-label {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 9px;
+      letter-spacing: .32em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    .lang-label.pref { color: var(--gold); }
+    .lang-label.avd  { color: var(--sand-lo); }
+
+    .lang-list { list-style: none; padding: 0; }
+    .lang-list li {
+      font-size: 14px;
+      color: var(--sand);
+      padding: 8px 0;
+      border-bottom: 1px solid var(--line-dim);
+      line-height: 1.52;
+      font-style: italic;
+    }
+    .lang-list li:last-child { border-bottom: none; }
+    .lang-block.avd .lang-list li { color: var(--sand-lo); }
+
+    /* ── Claim Registry Table ────────────────────────── */
+    .registry-wrap { overflow-x: auto; margin: 28px 0; }
+
+    .registry {
+      width: 100%;
+      min-width: 560px;
+      border-collapse: collapse;
+    }
+    .registry thead td {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 9px;
+      letter-spacing: .28em;
+      text-transform: uppercase;
+      color: var(--gold);
+      padding: 10px 16px 12px 0;
+      border-bottom: 1px solid rgba(212,168,67,.4);
+      opacity: .85;
+    }
+    .registry tbody td {
+      padding: 16px 16px 16px 0;
+      border-bottom: 1px solid var(--line-dim);
+      vertical-align: top;
+      color: var(--sand);
+      line-height: 1.58;
+      font-size: 15px;
+    }
+    .registry tbody td:first-child {
+      color: var(--white);
+      width: 42%;
+      padding-right: 20px;
+    }
+    .registry tbody td:nth-child(2) {
+      width: 13%;
+      padding-right: 16px;
+      white-space: nowrap;
+    }
+
+    .tag {
+      display: inline-block;
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 8px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      padding: 3px 8px;
+      border: 1px solid;
+    }
+    .tag-v { color: var(--gold);    border-color: rgba(212,168,67,.38); }
+    .tag-q { color: var(--sand);    border-color: rgba(200,168,120,.28); }
+    .tag-a { color: var(--sand-lo); border-color: rgba(200,168,120,.14); }
+
+    /* ── Source Lists ───────────────────────────────── */
+    .src-list { list-style: none; padding: 0; margin: 18px 0; }
+    .src-list li {
+      padding: 14px 0;
+      border-bottom: 1px solid var(--line-dim);
+      display: grid;
+      grid-template-columns: 210px 1fr;
+      gap: 16px;
+      align-items: baseline;
+    }
+    .src-name { color: var(--white); font-size: 15px; }
+    .src-desc { color: var(--sand); font-size: 14px; line-height: 1.52; }
+
+    /* ── Sector Map ─────────────────────────────────── */
+    .sector-list { list-style: none; padding: 0; margin: 18px 0; }
+    .sector-item {
+      padding: 16px 0;
+      border-bottom: 1px solid var(--line-dim);
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 20px;
+      align-items: baseline;
+    }
+    .sector-label {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 10px;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .sector-src { font-size: 14px; color: var(--sand); line-height: 1.58; }
+
+    /* ── Independence Block ──────────────────────────── */
+    .indep-block {
+      padding: 28px 30px;
+      border: 1px solid var(--line-gold);
+      background: rgba(212,168,67,.04);
+      margin-top: 24px;
+    }
+    .indep-block p {
+      font-size: 14px;
+      color: var(--sand);
+      line-height: 1.78;
+      margin-bottom: 12px;
+    }
+    .indep-block p:last-child { margin-bottom: 0; }
+
+    /* ── Footer ─────────────────────────────────────── */
+    .doc-footer {
+      position: relative;
+      z-index: 10;
+      border-top: 1px solid var(--line-gold);
+      padding: 32px 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .doc-footer a {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 20px;
+      letter-spacing: .1em;
+      color: var(--gold);
+      text-decoration: none;
+    }
+    .doc-footer p {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 10px;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--sand-lo);
+    }
+
+    /* ── Reveal ─────────────────────────────────────── */
+    .rx { opacity: 0; transform: translateY(18px); transition: opacity .7s ease, transform .7s ease; }
+    .rx.visible { opacity: 1; transform: none; }
+    .rx-d1 { transition-delay: .1s; }
+    .rx-d2 { transition-delay: .2s; }
+    .rx-d3 { transition-delay: .3s; }
+
+    /* ── Responsive ──────────────────────────────────── */
+    @media (max-width: 900px) {
+      .doc { padding: 120px 36px 80px; }
+      .lang-rules { grid-template-columns: 1fr; }
+      .doc-nav { padding: 16px 32px; }
+    }
+    @media (max-width: 600px) {
+      .doc { padding: 100px 24px 60px; }
+      .doc-nav { padding: 14px 20px; }
+      .doc-title { font-size: 48px; }
+      .src-list li { grid-template-columns: 1fr; gap: 4px; }
+      .sector-item { grid-template-columns: 1fr; gap: 8px; }
+      .doc-footer { padding: 28px 24px; flex-direction: column; gap: 12px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<canvas id="orb"></canvas>
+
+<nav class="doc-nav">
+  <a href="/" class="nav-return">← GigaSaudi</a>
+  <a href="/" class="nav-brand">GigaSaudi</a>
+  <a href="/#acquire" class="nav-cta">Inquire →</a>
+</nav>
+
+<div class="doc">
+
+  <!-- Hero -->
+  <div class="doc-hero rx">
+    <div class="doc-kicker">GigaSaudi.com / Sources &amp; Claim Registry</div>
+    <h1 class="doc-title">SOURCE<br><em>POSTURE</em></h1>
+    <p class="doc-subhead">Every major assertion on GigaSaudi.com is verified, qualified, or explicitly identified as analytical framing. This page is the public record of that discipline.</p>
+  </div>
+
+  <!-- ════════════════════════ 01 Source Policy ════════════════════════ -->
+  <div class="sec rx rx-d1">
+    <div class="sec-num">01 &nbsp;&nbsp; Source Policy</div>
+    <h2 class="sec-title">How Claims Are Made</h2>
+    <p class="sec-body">GigaSaudi.com makes three categories of claims. Each type is governed by a different evidentiary standard.</p>
+
+    <div class="claim-types">
+      <div class="claim-type">
+        <div class="ct-label">Type A</div>
+        <div class="ct-title">Verified</div>
+        <div class="ct-body">Directly supported by official government communications, sovereign fund disclosures, international institutional announcements, or credible financial reporting. Stated as fact without qualification.
+          <em>Example: &ldquo;Saudi Arabia will host the FIFA World Cup 2034.&rdquo; &mdash; FIFA official announcement, October 2024.</em>
+        </div>
+      </div>
+      <div class="claim-type">
+        <div class="ct-label">Type B</div>
+        <div class="ct-title">Qualified</div>
+        <div class="ct-body">Well-supported by public reporting but expressed in directional or range terms rather than precise figures. Stated with appropriate hedging language.
+          <em>Example: &ldquo;PIF is one of the world&rsquo;s largest and most strategically visible sovereign wealth funds, with publicly stated targets in the trillions of dollars.&rdquo;</em>
+        </div>
+      </div>
+      <div class="claim-type">
+        <div class="ct-label">Type C</div>
+        <div class="ct-title">Architectural</div>
+        <div class="ct-body">Analytical framing and compound reasoning that does not make specific numerical claims. Editorial judgment about observable, well-reported phenomena.
+          <em>Example: &ldquo;Saudi Arabia is increasingly understood through scale rather than geography alone.&rdquo;</em>
+        </div>
+      </div>
+    </div>
+
+    <h3>Language Standards</h3>
+
+    <div class="lang-rules">
+      <div class="lang-block pref">
+        <div class="lang-label pref">Preferred</div>
+        <ul class="lang-list">
+          <li>&ldquo;Saudi Arabia is undergoing a giga-scale transformation across capital, cities, tourism, technology, energy, sport, culture, and global perception.&rdquo;</li>
+          <li>&ldquo;PIF is one of the world&rsquo;s largest and most strategically visible sovereign wealth funds.&rdquo;</li>
+          <li>&ldquo;Trillions in publicly stated capital commitments.&rdquo;</li>
+          <li>&ldquo;Vision 2030 targets include&hellip;&rdquo;</li>
+          <li>&ldquo;Accelerating investment across sectors.&rdquo;</li>
+        </ul>
+      </div>
+      <div class="lang-block avd">
+        <div class="lang-label avd">Avoided</div>
+        <ul class="lang-list">
+          <li>&ldquo;Saudi Arabia is the largest / richest / most advanced / guaranteed to succeed.&rdquo;</li>
+          <li>&ldquo;PIF is the world&rsquo;s largest sovereign wealth fund.&rdquo;</li>
+          <li>&ldquo;$X trillion guaranteed.&rdquo;</li>
+          <li>&ldquo;Will achieve by 2030.&rdquo;</li>
+          <li>Precise financial figures without verified attribution.</li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="sec-body">Any precise financial figure, search-volume estimate, project cost, or timeline appearing in GigaSaudi.com content either cites a specific source or is accompanied by a qualification that it is approximate, directional, or subject to revision.</p>
+  </div>
+
+  <!-- ════════════════════════ 02 Claim Registry ════════════════════════ -->
+  <div class="sec rx rx-d1">
+    <div class="sec-num">02 &nbsp;&nbsp; Claim Registry</div>
+    <h2 class="sec-title">Major Claims &amp; Their Basis</h2>
+    <p class="sec-body">The following registers the primary factual and analytical claims made across GigaSaudi.com and the strategic asset dossier, with sourcing type and basis for each.</p>
+
+    <div class="registry-wrap">
+      <table class="registry">
+        <thead>
+          <tr>
+            <td>Claim</td>
+            <td>Type</td>
+            <td>Sourcing Basis</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>&ldquo;GigaProjects&rdquo; &mdash; the official giga-scale naming convention for Saudi infrastructure</td>
+            <td><span class="tag tag-v">Verified</span></td>
+            <td>Used in official NEOM Co. and PIF communications; adopted by international financial media</td>
+          </tr>
+          <tr>
+            <td>Saudi Arabia will host the FIFA World Cup 2034</td>
+            <td><span class="tag tag-v">Verified</span></td>
+            <td>FIFA official announcement, October 2024</td>
+          </tr>
+          <tr>
+            <td>Sovereign wealth fund with trillion-scale publicly stated AUM targets</td>
+            <td><span class="tag tag-q">Qualified</span></td>
+            <td>PIF official strategy communications; publicly stated AUM targets; Sovereign Wealth Fund Institute rankings</td>
+          </tr>
+          <tr>
+            <td>Over one trillion dollars in committed infrastructure capital</td>
+            <td><span class="tag tag-q">Qualified</span></td>
+            <td>Aggregated from Vision 2030 capital mobilization targets, PIF portfolio commitments, and individual giga-project announced budgets in official communications</td>
+          </tr>
+          <tr>
+            <td>AI and technology investment accelerating through national institutions</td>
+            <td><span class="tag tag-q">Qualified</span></td>
+            <td>SDAIA mandate, Vision 2030 digital economy pillar, officially announced national AI strategy and international partnership announcements</td>
+          </tr>
+          <tr>
+            <td>Saudi Arabia&rsquo;s transformation program as producing the most concentrated global institutional attention of any national program in the 21st century</td>
+            <td><span class="tag tag-a">Architectural</span></td>
+            <td>Editorial judgment based on observable convergence of capital flows, media coverage, diplomatic engagement, and program scale relative to comparable initiatives</td>
+          </tr>
+          <tr>
+            <td>GigaSaudi.com as a &ldquo;natural language category&rdquo; for Saudi giga-scale</td>
+            <td><span class="tag tag-a">Architectural</span></td>
+            <td>Analytical claim about naming logic and category theory &mdash; presented as editorial reasoning, not empirical fact</td>
+          </tr>
+          <tr>
+            <td>Search volume figures cited in the strategic asset dossier</td>
+            <td><span class="tag tag-q">Qualified</span></td>
+            <td>Third-party search intelligence tools; cited as directional indicators, approximate, and subject to variation</td>
+          </tr>
+          <tr>
+            <td>Comparable domain sale prices cited in the strategic asset dossier</td>
+            <td><span class="tag tag-q">Qualified</span></td>
+            <td>Public domain transaction records and domain industry reporting; cited for comparative framing only</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ════════════════════════ 03 Reference Sources ════════════════════════ -->
+  <div class="sec rx rx-d1">
+    <div class="sec-num">03 &nbsp;&nbsp; Reference Sources</div>
+    <h2 class="sec-title">Saudi Giga-Scale Reference Infrastructure</h2>
+    <p class="sec-body">The following sources are used as primary reference for claims about Saudi Arabia&rsquo;s transformation program, its capital base, and the scope of its giga-scale projects.</p>
+
+    <h3>Official &amp; Sovereign</h3>
+    <ul class="src-list">
+      <li><span class="src-name">Vision 2030</span><span class="src-desc">vision2030.gov.sa &mdash; Official national transformation program documentation and progress reporting</span></li>
+      <li><span class="src-name">Public Investment Fund</span><span class="src-desc">pif.gov.sa &mdash; Official sovereign wealth fund strategy, portfolio disclosures, and annual reports</span></li>
+      <li><span class="src-name">NEOM Co.</span><span class="src-desc">neom.com &mdash; Official operator of NEOM giga-project developments and related communications</span></li>
+      <li><span class="src-name">SDAIA</span><span class="src-desc">sdaia.gov.sa &mdash; Saudi Data &amp; AI Authority; official national AI strategy and digital economy mandate</span></li>
+      <li><span class="src-name">Saudi Tourism Authority</span><span class="src-desc">visitsaudi.com &mdash; Official tourism targets and Vision 2030 tourism pillar documentation</span></li>
+      <li><span class="src-name">General Entertainment Authority</span><span class="src-desc">gea.gov.sa &mdash; Vision 2030 quality of life program and entertainment sector development</span></li>
+    </ul>
+
+    <h3>International Institutional</h3>
+    <ul class="src-list">
+      <li><span class="src-name">IMF &mdash; Saudi Arabia</span><span class="src-desc">Article IV Consultations; World Economic Outlook Saudi Arabia data and projections</span></li>
+      <li><span class="src-name">World Bank</span><span class="src-desc">Saudi Arabia macroeconomic data and development indicators</span></li>
+      <li><span class="src-name">OECD</span><span class="src-desc">Saudi Arabia economic surveys and investment climate reporting</span></li>
+      <li><span class="src-name">IRENA</span><span class="src-desc">International Renewable Energy Agency &mdash; Saudi Arabia energy transition data and targets</span></li>
+    </ul>
+
+    <h3>Financial &amp; Institutional Media</h3>
+    <ul class="src-list">
+      <li><span class="src-name">Financial Times</span><span class="src-desc">Institutional reporting on PIF, Vision 2030, and Saudi capital markets</span></li>
+      <li><span class="src-name">Bloomberg</span><span class="src-desc">Sovereign wealth fund coverage and Saudi economic reporting</span></li>
+      <li><span class="src-name">Reuters</span><span class="src-desc">Project announcements and Saudi economic developments</span></li>
+      <li><span class="src-name">The Economist</span><span class="src-desc">Analytical coverage of Gulf economic transformation and Vision 2030 progress</span></li>
+    </ul>
+  </div>
+
+  <!-- ════════════════════════ 04 Sector Sources ════════════════════════ -->
+  <div class="sec rx rx-d1">
+    <div class="sec-num">04 &nbsp;&nbsp; Project &amp; Sector Categories</div>
+    <h2 class="sec-title">Sourcing by Sector</h2>
+    <p class="sec-body">GigaSaudi.com references multiple sectors of Saudi Arabia&rsquo;s transformation program. The following maps each sector to its primary sourcing layer.</p>
+
+    <ul class="sector-list">
+      <li class="sector-item">
+        <span class="sector-label">Capital &amp; Investment</span>
+        <span class="sector-src">PIF annual reports and official strategy communications; Vision 2030 investment mobilization targets; IMF and World Bank Saudi data</span>
+      </li>
+      <li class="sector-item">
+        <span class="sector-label">Urban Infrastructure</span>
+        <span class="sector-src">NEOM Co., Red Sea Global, Qiddiya, and Diriyah Gate Development Authority official project communications</span>
+      </li>
+      <li class="sector-item">
+        <span class="sector-label">Tourism</span>
+        <span class="sector-src">Saudi Tourism Authority official communications; Vision 2030 tourism pillar targets and progress reports</span>
+      </li>
+      <li class="sector-item">
+        <span class="sector-label">Technology &amp; AI</span>
+        <span class="sector-src">SDAIA official mandate; Vision 2030 digital economy pillar; national AI strategy and officially announced international AI infrastructure partnerships</span>
+      </li>
+      <li class="sector-item">
+        <span class="sector-label">Energy</span>
+        <span class="sector-src">Ministry of Energy official communications; Saudi Aramco annual reports; IRENA renewable energy data; Vision 2030 energy transformation targets</span>
+      </li>
+      <li class="sector-item">
+        <span class="sector-label">Sport &amp; Culture</span>
+        <span class="sector-src">FIFA official communications (World Cup 2034 announcement); General Entertainment Authority; Vision 2030 quality of life program documentation</span>
+      </li>
+      <li class="sector-item">
+        <span class="sector-label">Logistics</span>
+        <span class="sector-src">Saudi Logistics Hub national strategy; Ministry of Transport and Logistic Services communications; NEOM logistics component official documentation</span>
+      </li>
+    </ul>
+  </div>
+
+  <!-- ════════════════════════ 05 Independence Note ════════════════════════ -->
+  <div class="sec rx rx-d1">
+    <div class="sec-num">05 &nbsp;&nbsp; Independence Note</div>
+    <h2 class="sec-title">Independence &amp; Scope</h2>
+    <p class="sec-body">This source posture represents the editorial standard applied to all content on GigaSaudi.com. It is published not as a defensive disclaimer, but as a statement of intellectual discipline &mdash; the record of how a name this strong earns the right to speak at this level.</p>
+
+    <div class="indep-block">
+      <p>GigaSaudi.com is an independent project. It is not affiliated with, endorsed by, sponsored by, or operated by the Government of Saudi Arabia, the Public Investment Fund, NEOM Co., or any Saudi sovereign entity.</p>
+      <p>The sources listed on this page are authoritative primary sources for the phenomena described. Their citation does not imply their endorsement of GigaSaudi.com or any editorial position expressed on this site.</p>
+      <p>This page reflects the site&rsquo;s claim posture at the time of publication and is updated as content evolves. Specific sourcing questions may be directed via the contact mechanism on GigaSaudi.com.</p>
+    </div>
+  </div>
+
+</div>
+
+<footer class="doc-footer">
+  <a href="/">GigaSaudi.com</a>
+  <p>Source posture &nbsp;&middot;&nbsp; Public record</p>
+</footer>
+
+<script>
+(function () {
+  /* Orbital canvas */
+  const c = document.getElementById('orb');
+  if (!c || !c.getContext) return;
+  const ctx = c.getContext('2d');
+  function resize() { c.width = innerWidth; c.height = innerHeight; }
+  resize();
+  addEventListener('resize', resize);
+
+  const rings = [
+    { r: 100, speed:  .00022, nodes: 1, nr: 3   },
+    { r: 180, speed:  .00016, nodes: 2, nr: 2.5 },
+    { r: 270, speed: -.00012, nodes: 3, nr: 2   },
+    { r: 375, speed:  .00009, nodes: 2, nr: 1.8 },
+    { r: 500, speed: -.00006, nodes: 4, nr: 1.5 },
+  ];
+
+  function draw(ts) {
+    const W = c.width, H = c.height, cx = W / 2, cy = H / 2;
+    ctx.clearRect(0, 0, W, H);
+    const g = ctx.createRadialGradient(cx, cy, 0, cx, cy, 34);
+    g.addColorStop(0, 'rgba(212,168,67,.55)');
+    g.addColorStop(1, 'rgba(212,168,67,0)');
+    ctx.fillStyle = g;
+    ctx.beginPath(); ctx.arc(cx, cy, 34, 0, 6.2832); ctx.fill();
+    rings.forEach((o, i) => {
+      ctx.strokeStyle = `rgba(212,168,67,${.09 - i * .012})`;
+      ctx.lineWidth = .6;
+      ctx.beginPath(); ctx.arc(cx, cy, o.r, 0, 6.2832); ctx.stroke();
+      for (let n = 0; n < o.nodes; n++) {
+        const a = ts * o.speed + n / o.nodes * 6.2832;
+        ctx.fillStyle = 'rgba(212,168,67,.72)';
+        ctx.beginPath();
+        ctx.arc(cx + Math.cos(a) * o.r, cy + Math.sin(a) * o.r, o.nr, 0, 6.2832);
+        ctx.fill();
+      }
+    });
+    requestAnimationFrame(draw);
+  }
+  requestAnimationFrame(draw);
+})();
+
+/* Reveal */
+(function () {
+  const obs = new IntersectionObserver(es => {
+    es.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.rx').forEach(el => obs.observe(el));
+})();
+</script>
+
+</body>
+</html>
