@@ -234,6 +234,38 @@ body:has(a:hover) #cur-ring { width:60px; height:60px; border-color:rgba(212,168
 }
 .ident-tagline strong { color: var(--sand); font-style: normal; font-weight: 500; }
 
+/* Hero claim — the naming resolution line */
+.hero-claim {
+  display: block;
+  margin-top: 22px;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 10px;
+  letter-spacing: .32em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-style: normal;
+}
+
+/* Hero CTA link */
+.hero-actions {
+  margin-top: 34px;
+  opacity: 0;
+  animation: fadeSlide .9s ease 1.1s forwards;
+}
+.hero-link {
+  display: inline-flex;
+  align-items: center;
+  color: var(--gold);
+  text-decoration: none;
+  font-size: 10px;
+  letter-spacing: .28em;
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(212,168,67,.35);
+  padding-bottom: 8px;
+  transition: border-color .3s;
+}
+.hero-link:hover { border-color: var(--gold); }
+
 /* Entry metrics — right side */
 .entry-metrics {
   position: absolute;
@@ -824,7 +856,7 @@ body:has(a:hover) #cur-ring { width:60px; height:60px; border-color:rgba(212,168
 .rx-d7 { transition-delay: .7s; }
 
 /* ══════════════════════════════════════════════
-   RESPONSIVE
+   RESPONSIVE — 900px
 ══════════════════════════════════════════════ */
 @media (max-width: 900px) {
   body { cursor: auto; }
@@ -846,6 +878,75 @@ body:has(a:hover) #cur-ring { width:60px; height:60px; border-color:rgba(212,168
   #s-footer { grid-template-columns: 1fr; text-align: center; gap: 16px; }
   .ft-right { text-align: center; }
   .acq-cta-wrap { flex-direction: column; align-items: flex-start; }
+}
+
+/* ══════════════════════════════════════════════
+   RESPONSIVE — 600px (MOBILE HERO)
+══════════════════════════════════════════════ */
+@media (max-width: 600px) {
+  #s-entry {
+    min-height: 100vh;
+    padding: 96px 28px 64px;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  .sys-bar {
+    margin-bottom: 72px;
+    gap: 14px;
+    max-width: 100%;
+  }
+
+  .sys-text {
+    font-size: 8px;
+    letter-spacing: .34em;
+    line-height: 1.5;
+  }
+
+  .sys-line {
+    max-width: 42px;
+  }
+
+  .ident-pre {
+    font-size: 9px;
+    letter-spacing: .55em;
+    margin-bottom: 18px;
+  }
+
+  .ident {
+    margin-bottom: 44px;
+  }
+
+  .ident-giga,
+  .ident-saudi {
+    font-size: clamp(76px, 24vw, 110px);
+  }
+
+  .ident-tagline {
+    font-size: 17px;
+    line-height: 1.75;
+    max-width: 94%;
+    margin-top: 32px;
+    color: rgba(240,230,200,0.84);
+  }
+
+  .ident-tagline strong {
+    color: var(--white);
+  }
+
+  .coord-label {
+    opacity: .45;
+    font-size: 8px;
+  }
+
+  .orbit-4,
+  .orbit-5 {
+    opacity: .55;
+  }
+
+  .gravity-core {
+    opacity: .85;
+  }
 }
 </style>
 </head>
@@ -917,7 +1018,12 @@ body:has(a:hover) #cur-ring { width:60px; height:60px; border-color:rgba(212,168
         Saudi Arabia is no longer understood through geography alone.<br>
         It is increasingly understood through <strong>scale</strong>:<br>
         capital scale, urban scale, energy scale, cultural scale, technological scale.
+        <span class="hero-claim">GigaSaudi names that scale.</span>
       </p>
+
+      <div class="hero-actions">
+        <a href="/why-gigasaudi/" class="hero-link">Why The Name Matters →</a>
+      </div>
     </div>
 
     <div class="entry-metrics">
@@ -962,7 +1068,7 @@ body:has(a:hover) #cur-ring { width:60px; height:60px; border-color:rgba(212,168
           <div class="decode-val">
             <div class="decode-term">Definition · Scale Register</div>
             <div class="decode-body">
-              10⁹ — one billion. A prefix of scale. In the Saudi context, "giga" is no longer only a unit of measurement. It has become a development language: cities, capital, energy, tourism, culture, technology, and time compressed into a national transformation horizon.
+              10⁹ — one billion. A prefix of scale. In the Saudi context, “giga” is no longer only a unit of measurement. It has become a development language: cities, capital, energy, tourism, culture, technology, and time compressed into a national transformation horizon.
             </div>
           </div>
         </div>
@@ -980,7 +1086,7 @@ body:has(a:hover) #cur-ring { width:60px; height:60px; border-color:rgba(212,168
           <div class="decode-val">
             <div class="decode-term">The Compound · What the name creates</div>
             <div class="decode-body">
-              GigaSaudi does not merely combine two words. It names the scale-language of a national transformation already visible across Saudi Arabia's capital strategy, urban projects, tourism buildout, cultural expansion, sports presence, energy transition, and technology ambitions.
+              GigaSaudi does not merely combine two words. It names the scale-language of a national transformation already visible across Saudi Arabia’s capital strategy, urban projects, tourism buildout, cultural expansion, sports presence, energy transition, and technology ambitions.
             </div>
           </div>
         </div>
@@ -1023,7 +1129,7 @@ body:has(a:hover) #cur-ring { width:60px; height:60px; border-color:rgba(212,168
           <span class="proj-idx">02 · NEOM</span>
           <div class="proj-name">Sindalah</div>
           <div class="proj-sub">Luxury Island Destination</div>
-          <p class="proj-body">A sovereign island resort targeting ultra-high-net-worth global travelers. Repositioning the Red Sea as the world's new Riviera.</p>
+          <p class="proj-body">A sovereign island resort targeting ultra-high-net-worth global travelers. Repositioning the Red Sea as the world’s new Riviera.</p>
         </div>
         <div class="proj-panel-bot">
           <div class="proj-scale">$4B</div>
@@ -1055,7 +1161,7 @@ body:has(a:hover) #cur-ring { width:60px; height:60px; border-color:rgba(212,168
           <span class="proj-idx">04 · Entertainment</span>
           <div class="proj-name">Qiddiya</div>
           <div class="proj-sub">Entertainment Sovereign</div>
-          <p class="proj-body">A city-scale entertainment capital designed to capture global youth culture. Saudi Arabia's answer to the question: what does play look like at giga-scale?</p>
+          <p class="proj-body">A city-scale entertainment capital designed to capture global youth culture. Saudi Arabia’s answer to the question: what does play look like at giga-scale?</p>
         </div>
         <div class="proj-panel-bot">
           <div class="proj-scale">$8B</div>
@@ -1195,7 +1301,7 @@ body:has(a:hover) #cur-ring { width:60px; height:60px; border-color:rgba(212,168
         <p class="target-rationale">
           Some names do not merely describe a transformation. They become part of how that transformation is understood.
 
-          GigaSaudi.com is a rare English-language coordinate naturally aligned with Saudi Arabia's giga-scale era: concise, sovereign in tone, globally readable, and structurally connected to the language of giga-projects, capital scale, and national transformation.
+          GigaSaudi.com is a rare English-language coordinate naturally aligned with Saudi Arabia’s giga-scale era: concise, sovereign in tone, globally readable, and structurally connected to the language of giga-projects, capital scale, and national transformation.
         </p>
       </div>
       <div class="target-cell rx rx-d1">
@@ -1250,7 +1356,7 @@ body:has(a:hover) #cur-ring { width:60px; height:60px; border-color:rgba(212,168
   <footer id="s-footer">
     <div class="ft-logo">Giga<span>Saudi</span></div>
     <div class="ft-center">
-      <p class="ft-tagline">The scale reference for<br>Saudi Arabia's civilizational build.</p>
+      <p class="ft-tagline">The scale reference for<br>Saudi Arabia’s civilizational build.</p>
     </div>
     <div class="ft-right">
       <p class="ft-copy">© 2025 · GigaSaudi.com</p>
