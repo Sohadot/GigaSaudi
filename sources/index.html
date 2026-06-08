@@ -48,7 +48,7 @@
       pointer-events: none;
     }
 
-    /* ── Nav ────────────────────────────────────────── */
+    /* ── Nav ────────────────────────────────────────────────── */
     .doc-nav {
       position: fixed;
       top: 0; left: 0; right: 0;
@@ -83,7 +83,7 @@
       text-decoration: none;
     }
 
-    /* ── Document column ────────────────────────────── */
+    /* ── Document column ────────────────────────────────────────── */
     .doc {
       position: relative;
       z-index: 10;
@@ -92,7 +92,7 @@
       padding: 148px 60px 100px;
     }
 
-    /* ── Hero ─────────────────────────────────────── */
+    /* ── Hero ───────────────────────────────────────────────────── */
     .doc-hero { margin-bottom: 80px; }
 
     .doc-kicker {
@@ -126,7 +126,7 @@
       font-style: italic;
     }
 
-    /* ── Sections ───────────────────────────────────── */
+    /* ── Sections ─────────────────────────────────────────────────── */
     .sec {
       margin-bottom: 72px;
       padding-bottom: 72px;
@@ -182,7 +182,7 @@
       opacity: .85;
     }
 
-    /* ── Claim Types ───────────────────────────────── */
+    /* ── Claim Types ─────────────────────────────────────────────── */
     .claim-types { display: grid; gap: 16px; margin: 28px 0; }
 
     .claim-type {
@@ -217,7 +217,7 @@
       margin-top: 10px;
     }
 
-    /* ── Language Rules ────────────────────────────── */
+    /* ── Language Rules ────────────────────────────────────────────── */
     .lang-rules {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -250,7 +250,7 @@
     .lang-list li:last-child { border-bottom: none; }
     .lang-block.avd .lang-list li { color: var(--sand-lo); }
 
-    /* ── Claim Registry Table ────────────────────────── */
+    /* ── Claim Registry Table ───────────────────────────────────────────── */
     .registry-wrap { overflow-x: auto; margin: 28px 0; }
 
     .registry {
@@ -300,7 +300,7 @@
     .tag-q { color: var(--sand);    border-color: rgba(200,168,120,.28); }
     .tag-a { color: var(--sand-lo); border-color: rgba(200,168,120,.14); }
 
-    /* ── Source Lists ───────────────────────────────── */
+    /* ── Source Lists ───────────────────────────────────────────────── */
     .src-list { list-style: none; padding: 0; margin: 18px 0; }
     .src-list li {
       padding: 14px 0;
@@ -313,7 +313,7 @@
     .src-name { color: var(--white); font-size: 15px; }
     .src-desc { color: var(--sand); font-size: 14px; line-height: 1.52; }
 
-    /* ── Sector Map ─────────────────────────────────── */
+    /* ── Sector Map ────────────────────────────────────────────────── */
     .sector-list { list-style: none; padding: 0; margin: 18px 0; }
     .sector-item {
       padding: 16px 0;
@@ -332,7 +332,7 @@
     }
     .sector-src { font-size: 14px; color: var(--sand); line-height: 1.58; }
 
-    /* ── Independence Block ──────────────────────────── */
+    /* ── Independence Block ────────────────────────────────────────────── */
     .indep-block {
       padding: 28px 30px;
       border: 1px solid var(--line-gold);
@@ -347,7 +347,7 @@
     }
     .indep-block p:last-child { margin-bottom: 0; }
 
-    /* ── Footer ─────────────────────────────────────── */
+    /* ── Footer ──────────────────────────────────────────────────────── */
     .doc-footer {
       position: relative;
       z-index: 10;
@@ -374,14 +374,14 @@
       color: var(--sand-lo);
     }
 
-    /* ── Reveal ─────────────────────────────────────── */
+    /* ── Reveal ──────────────────────────────────────────────────────── */
     .rx { opacity: 0; transform: translateY(18px); transition: opacity .7s ease, transform .7s ease; }
     .rx.visible { opacity: 1; transform: none; }
     .rx-d1 { transition-delay: .1s; }
     .rx-d2 { transition-delay: .2s; }
     .rx-d3 { transition-delay: .3s; }
 
-    /* ── Responsive ──────────────────────────────────── */
+    /* ── Responsive ────────────────────────────────────────────────── */
     @media (max-width: 900px) {
       .doc { padding: 120px 36px 80px; }
       .lang-rules { grid-template-columns: 1fr; }
@@ -395,11 +395,29 @@
       .sector-item { grid-template-columns: 1fr; gap: 8px; }
       .doc-footer { padding: 28px 24px; flex-direction: column; gap: 12px; text-align: center; }
     }
+
+    /* ── SITE NAV ── */
+    .site-nav { position:fixed; top:68px; left:50%; transform:translateX(-50%); z-index:99; display:flex; gap:18px; padding:10px 18px; border:1px solid rgba(212,168,67,.18); background:rgba(7,6,15,.72); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); white-space:nowrap; }
+    .site-nav a { color:rgba(200,168,120,.62); text-decoration:none; font-family:'Share Tech Mono',monospace; font-size:9px; letter-spacing:.22em; text-transform:uppercase; transition:color .25s; }
+    .site-nav a:hover,.site-nav a[aria-current="page"] { color:var(--gold); }
+    @media (max-width:700px) {
+      .site-nav { left:0; right:0; top:52px; transform:none; overflow-x:auto; justify-content:flex-start; border-left:0; border-right:0; border-top:0; border-bottom:1px solid rgba(212,168,67,.18); padding:11px 16px; gap:16px; }
+      .site-nav::-webkit-scrollbar { display:none; }
+    }
   </style>
 </head>
 <body>
 
 <canvas id="orb"></canvas>
+
+<nav class="site-nav" aria-label="GigaSaudi navigation">
+  <a href="/">Home</a>
+  <a href="/why-gigasaudi/">Thesis</a>
+  <a href="/saudi-giga-scale/">Category</a>
+  <a href="/sectors/">Sectors</a>
+  <a href="/sources/" aria-current="page">Sources</a>
+  <a href="/availability/">Availability</a>
+</nav>
 
 <nav class="doc-nav">
   <a href="/" class="nav-return">← GigaSaudi</a>

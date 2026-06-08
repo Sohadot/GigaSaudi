@@ -264,6 +264,15 @@ body:has(a:hover) #cur-ring { width:60px; height:60px; border-color:rgba(212,168
   .doc-footer { padding:32px 24px; flex-direction:column; align-items:flex-start; gap:20px; }
   .ft-disc { text-align:left; max-width:100%; }
 }
+
+/* ── SITE NAV ── */
+.site-nav { position:fixed; top:68px; left:50%; transform:translateX(-50%); z-index:99; display:flex; gap:18px; padding:10px 18px; border:1px solid rgba(212,168,67,.18); background:rgba(4,3,10,.72); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); white-space:nowrap; }
+.site-nav a { color:rgba(240,230,200,.62); text-decoration:none; font-family:'Share Tech Mono',monospace; font-size:9px; letter-spacing:.22em; text-transform:uppercase; transition:color .25s; }
+.site-nav a:hover,.site-nav a[aria-current="page"] { color:var(--gold); }
+@media (max-width:700px) {
+  .site-nav { left:0; right:0; top:52px; transform:none; overflow-x:auto; justify-content:flex-start; border-left:0; border-right:0; border-top:0; border-bottom:1px solid rgba(212,168,67,.18); padding:11px 16px; gap:16px; }
+  .site-nav::-webkit-scrollbar { display:none; }
+}
 </style>
 </head>
 <body>
@@ -287,6 +296,15 @@ body:has(a:hover) #cur-ring { width:60px; height:60px; border-color:rgba(212,168
     <div class="gravity-core" style="animation:pulse-core 4s ease-in-out infinite;"></div>
   </div>
 </div>
+
+<nav class="site-nav" aria-label="GigaSaudi navigation">
+  <a href="/">Home</a>
+  <a href="/why-gigasaudi/">Thesis</a>
+  <a href="/saudi-giga-scale/">Category</a>
+  <a href="/sectors/">Sectors</a>
+  <a href="/sources/">Sources</a>
+  <a href="/availability/" aria-current="page">Availability</a>
+</nav>
 
 <nav class="doc-nav">
   <a href="/" class="return-link">← GigaSaudi</a>
@@ -316,7 +334,7 @@ body:has(a:hover) #cur-ring { width:60px; height:60px; border-color:rgba(212,168
       <div class="sec-num">01 — What Is Available</div>
       <h2 class="sec-title">What Is Available</h2>
       <div class="sec-body">
-        <p>GigaSaudi.com is a .com naming coordinate at the intersection of the two most strategically resonant terms in Saudi Arabia's transformation era: "Giga" — the language of scale — and "Saudi" — the sovereign anchor of that transformation.</p>
+        <p>GigaSaudi.com is a .com naming coordinate at the intersection of the two most strategically resonant terms in Saudi Arabia’s transformation era: “Giga” — the language of scale — and “Saudi” — the sovereign anchor of that transformation.</p>
         <div class="pull-quote">
           <p>This is the naming layer. Not one project. Not one sector. The name for the scale above the projects.</p>
         </div>
@@ -329,12 +347,12 @@ body:has(a:hover) #cur-ring { width:60px; height:60px; border-color:rgba(212,168
       <div class="sec-num">02 — Qualified Acquirer Profile</div>
       <h2 class="sec-title">Qualified Acquirer Profile</h2>
       <div class="sec-body">
-        <p>Not every interested party is a qualified acquirer. The name's strategic value depends on it being developed, protected, and deployed with intent.</p>
+        <p>Not every interested party is a qualified acquirer. The name’s strategic value depends on it being developed, protected, and deployed with intent.</p>
       </div>
       <div class="qualifier-list">
         <div class="qualifier-item">
           <div class="qual-marker">01</div>
-          <div class="qual-text"><strong>Strategic relevance.</strong> The acquirer operates within, serves, or communicates about Saudi Arabia's giga-scale transformation era across capital, cities, energy, technology, tourism, sport, culture, logistics, or infrastructure.</div>
+          <div class="qual-text"><strong>Strategic relevance.</strong> The acquirer operates within, serves, or communicates about Saudi Arabia’s giga-scale transformation era across capital, cities, energy, technology, tourism, sport, culture, logistics, or infrastructure.</div>
         </div>
         <div class="qualifier-item">
           <div class="qual-marker">02</div>
@@ -373,7 +391,7 @@ body:has(a:hover) #cur-ring { width:60px; height:60px; border-color:rgba(212,168
       <div class="protocol-list">
         <div class="proto-step">
           <div class="proto-num">01</div>
-          <div class="proto-text">Qualified inquiry submitted via the contact channel below, with context about the acquirer's identity and intended use.</div>
+          <div class="proto-text">Qualified inquiry submitted via the contact channel below, with context about the acquirer’s identity and intended use.</div>
         </div>
         <div class="proto-step">
           <div class="proto-num">02</div>
@@ -407,7 +425,7 @@ body:has(a:hover) #cur-ring { width:60px; height:60px; border-color:rgba(212,168
           <p>A category name transferred to the wrong acquirer is a category name destroyed. A category name in the hands of the right acquirer becomes infrastructure.</p>
         </div>
         <p>The qualification requirement exists to protect the strategic integrity of the asset — for the acquirer as much as for the category itself.</p>
-        <p>A name that names Saudi Arabia's giga-scale era at the highest level of abstraction carries a weight that most domain transactions do not. The qualification process is how that weight is acknowledged at the point of transfer.</p>
+        <p>A name that names Saudi Arabia’s giga-scale era at the highest level of abstraction carries a weight that most domain transactions do not. The qualification process is how that weight is acknowledged at the point of transfer.</p>
       </div>
     </section>
 
@@ -448,7 +466,7 @@ body:has(a:hover) #cur-ring { width:60px; height:60px; border-color:rgba(212,168
           <div class="nl-num">03</div>
           <div class="nl-body">
             <div class="nl-title">The Sector Map</div>
-            <div class="nl-path">/sectors/ — The ten sectors of Saudi Arabia's giga-scale era</div>
+            <div class="nl-path">/sectors/ — The ten sectors of Saudi Arabia’s giga-scale era</div>
           </div>
           <div class="nl-arr">→</div>
         </a>

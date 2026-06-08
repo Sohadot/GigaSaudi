@@ -848,6 +848,15 @@ body:has(a:hover) #cur-ring { width:60px; height:60px; border-color:rgba(212,168
   .orbit-4, .orbit-5 { opacity: .55; }
   .gravity-core { opacity: .85; }
 }
+
+/* ── SITE NAV ── */
+.site-nav { position:fixed; top:18px; left:50%; transform:translateX(-50%); z-index:99; display:flex; gap:18px; padding:10px 18px; border:1px solid rgba(212,168,67,.18); background:rgba(4,3,10,.72); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); white-space:nowrap; }
+.site-nav a { color:rgba(240,230,200,.62); text-decoration:none; font-family:'Share Tech Mono',monospace; font-size:9px; letter-spacing:.22em; text-transform:uppercase; transition:color .25s; }
+.site-nav a:hover,.site-nav a[aria-current="page"] { color:var(--gold); }
+@media (max-width:700px) {
+  .site-nav { left:0; right:0; top:0; transform:none; overflow-x:auto; justify-content:flex-start; border-left:0; border-right:0; border-top:0; border-bottom:1px solid rgba(212,168,67,.18); padding:11px 16px; gap:16px; }
+  .site-nav::-webkit-scrollbar { display:none; }
+}
 </style>
 </head>
 <body>
@@ -879,6 +888,15 @@ body:has(a:hover) #cur-ring { width:60px; height:60px; border-color:rgba(212,168
     <div class="gravity-core" style="animation: pulse-core 4s ease-in-out infinite;"></div>
   </div>
 </div>
+
+<nav class="site-nav" aria-label="GigaSaudi navigation">
+  <a href="/" aria-current="page">Home</a>
+  <a href="/why-gigasaudi/">Thesis</a>
+  <a href="/saudi-giga-scale/">Category</a>
+  <a href="/sectors/">Sectors</a>
+  <a href="/sources/">Sources</a>
+  <a href="/availability/">Availability</a>
+</nav>
 
 <div id="content">
 
@@ -951,7 +969,7 @@ body:has(a:hover) #cur-ring { width:60px; height:60px; border-color:rgba(212,168
           <div class="decode-val">
             <div class="decode-term">Definition · Scale Register</div>
             <div class="decode-body">
-              10⁹ — one billion. A prefix of scale. In the Saudi context, "giga" is no longer only a unit of measurement. It has become a development language: cities, capital, energy, tourism, culture, technology, and time compressed into a national transformation horizon.
+              10⁹ — one billion. A prefix of scale. In the Saudi context, “giga” is no longer only a unit of measurement. It has become a development language: cities, capital, energy, tourism, culture, technology, and time compressed into a national transformation horizon.
             </div>
           </div>
         </div>
@@ -969,7 +987,7 @@ body:has(a:hover) #cur-ring { width:60px; height:60px; border-color:rgba(212,168
           <div class="decode-val">
             <div class="decode-term">The Compound · What the name creates</div>
             <div class="decode-body">
-              GigaSaudi does not merely combine two words. It names the scale-language of a national transformation already visible across Saudi Arabia's capital strategy, urban projects, tourism buildout, cultural expansion, sports presence, energy transition, and technology ambitions.
+              GigaSaudi does not merely combine two words. It names the scale-language of a national transformation already visible across Saudi Arabia’s capital strategy, urban projects, tourism buildout, cultural expansion, sports presence, energy transition, and technology ambitions.
             </div>
           </div>
         </div>
@@ -1008,7 +1026,7 @@ body:has(a:hover) #cur-ring { width:60px; height:60px; border-color:rgba(212,168
           <span class="proj-idx">02 · NEOM</span>
           <div class="proj-name">Sindalah</div>
           <div class="proj-sub">Luxury Island Destination</div>
-          <p class="proj-body">A sovereign island resort targeting ultra-high-net-worth global travelers. Repositioning the Red Sea as the world's new Riviera.</p>
+          <p class="proj-body">A sovereign island resort targeting ultra-high-net-worth global travelers. Repositioning the Red Sea as the world’s new Riviera.</p>
         </div>
         <div class="proj-panel-bot">
           <div class="proj-scale">$4B</div>
@@ -1036,7 +1054,7 @@ body:has(a:hover) #cur-ring { width:60px; height:60px; border-color:rgba(212,168
           <span class="proj-idx">04 · Entertainment</span>
           <div class="proj-name">Qiddiya</div>
           <div class="proj-sub">Entertainment Sovereign</div>
-          <p class="proj-body">A city-scale entertainment capital designed to capture global youth culture. Saudi Arabia's answer to the question: what does play look like at giga-scale?</p>
+          <p class="proj-body">A city-scale entertainment capital designed to capture global youth culture. Saudi Arabia’s answer to the question: what does play look like at giga-scale?</p>
         </div>
         <div class="proj-panel-bot">
           <div class="proj-scale">$8B</div>
@@ -1166,7 +1184,7 @@ body:has(a:hover) #cur-ring { width:60px; height:60px; border-color:rgba(212,168
         <p class="target-rationale">
           Some names do not merely describe a transformation. They become part of how that transformation is understood.
 
-          GigaSaudi.com is a rare English-language coordinate naturally aligned with Saudi Arabia's giga-scale era: concise, sovereign in tone, globally readable, and structurally connected to the language of giga-projects, capital scale, and national transformation.
+          GigaSaudi.com is a rare English-language coordinate naturally aligned with Saudi Arabia’s giga-scale era: concise, sovereign in tone, globally readable, and structurally connected to the language of giga-projects, capital scale, and national transformation.
         </p>
       </div>
       <div class="target-cell rx rx-d1">
@@ -1218,7 +1236,7 @@ body:has(a:hover) #cur-ring { width:60px; height:60px; border-color:rgba(212,168
   <footer id="s-footer">
     <div class="ft-logo">Giga<span>Saudi</span></div>
     <div class="ft-center">
-      <p class="ft-tagline">The scale reference for<br>Saudi Arabia's civilizational build.</p>
+      <p class="ft-tagline">The scale reference for<br>Saudi Arabia’s civilizational build.</p>
     </div>
     <div class="ft-right">
       <p class="ft-copy">© 2025 · GigaSaudi.com</p>

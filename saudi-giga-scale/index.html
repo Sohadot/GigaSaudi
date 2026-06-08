@@ -310,6 +310,15 @@ body:has(a:hover) #cur-ring { width:60px; height:60px; border-color:rgba(212,168
   .doc-footer { padding:32px 24px; flex-direction:column; align-items:flex-start; gap:20px; }
   .ft-disc { text-align:left; max-width:100%; }
 }
+
+/* ── SITE NAV ── */
+.site-nav { position:fixed; top:68px; left:50%; transform:translateX(-50%); z-index:99; display:flex; gap:18px; padding:10px 18px; border:1px solid rgba(212,168,67,.18); background:rgba(4,3,10,.72); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); white-space:nowrap; }
+.site-nav a { color:rgba(240,230,200,.62); text-decoration:none; font-family:'Share Tech Mono',monospace; font-size:9px; letter-spacing:.22em; text-transform:uppercase; transition:color .25s; }
+.site-nav a:hover,.site-nav a[aria-current="page"] { color:var(--gold); }
+@media (max-width:700px) {
+  .site-nav { left:0; right:0; top:52px; transform:none; overflow-x:auto; justify-content:flex-start; border-left:0; border-right:0; border-top:0; border-bottom:1px solid rgba(212,168,67,.18); padding:11px 16px; gap:16px; }
+  .site-nav::-webkit-scrollbar { display:none; }
+}
 </style>
 </head>
 <body>
@@ -333,6 +342,15 @@ body:has(a:hover) #cur-ring { width:60px; height:60px; border-color:rgba(212,168
     <div class="gravity-core" style="animation:pulse-core 4s ease-in-out infinite;"></div>
   </div>
 </div>
+
+<nav class="site-nav" aria-label="GigaSaudi navigation">
+  <a href="/">Home</a>
+  <a href="/why-gigasaudi/">Thesis</a>
+  <a href="/saudi-giga-scale/" aria-current="page">Category</a>
+  <a href="/sectors/">Sectors</a>
+  <a href="/sources/">Sources</a>
+  <a href="/availability/">Availability</a>
+</nav>
 
 <nav class="doc-nav">
   <a href="/why-gigasaudi/" class="return-link">← Why GigaSaudi</a>
@@ -364,7 +382,7 @@ body:has(a:hover) #cur-ring { width:60px; height:60px; border-color:rgba(212,168
         <p>Saudi giga-scale is not a single project category. It is the operating layer that connects projects that have never been planned as one thing, but which are understood — globally — as one phenomenon.</p>
         <p>It is the register at which capital allocation, city-building, tourism development, energy transition, technology strategy, sport investment, cultural programming, and sovereign positioning converge into a single national transformation.</p>
         <div class="pull-quote">
-          <p>When the world describes Saudi Arabia's transformation, it does not describe one sector. It describes a scale. Saudi giga-scale is that scale.</p>
+          <p>When the world describes Saudi Arabia’s transformation, it does not describe one sector. It describes a scale. Saudi giga-scale is that scale.</p>
         </div>
         <p>The defining characteristic of giga-scale is not magnitude alone. It is simultaneity: multiple transformation programs running at the same time, in the same territory, with the same sovereign mandate.</p>
       </div>
@@ -501,11 +519,11 @@ body:has(a:hover) #cur-ring { width:60px; height:60px; border-color:rgba(212,168
           </div>
           <div class="nl-arr">→</div>
         </a>
-        <a href="mailto:inquiries@gigasaudi.com" class="nav-link">
+        <a href="/availability/" class="nav-link">
           <div class="nl-num">04</div>
           <div class="nl-body">
-            <div class="nl-title">Strategic Acquisition</div>
-            <div class="nl-path">inquiries@gigasaudi.com — Qualified strategic acquirers only</div>
+            <div class="nl-title">Strategic Availability</div>
+            <div class="nl-path">/availability/ — Acquisition posture and qualified inquiry</div>
           </div>
           <div class="nl-arr">→</div>
         </a>
