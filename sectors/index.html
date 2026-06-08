@@ -77,7 +77,6 @@ body:has(a:hover) #cur-ring { width:60px; height:60px; border-color:rgba(212,168
 
 #content { position:relative; z-index:10; }
 
-/* ── NAV ── */
 .doc-nav {
   position:fixed; top:0; left:0; right:0; z-index:100;
   padding:20px 60px;
@@ -105,10 +104,8 @@ body:has(a:hover) #cur-ring { width:60px; height:60px; border-color:rgba(212,168
 }
 .nav-cta:hover { border-color:var(--gold); }
 
-/* ── DOCUMENT LAYOUT ── */
 .doc-wrap { max-width:800px; margin:0 auto; padding:148px 60px 120px; }
 
-/* ── HERO ── */
 .doc-hero { margin-bottom:80px; padding-bottom:72px; border-bottom:1px solid var(--line-dim); }
 .doc-eyebrow {
   font-size:9px; letter-spacing:.5em; color:var(--gold);
@@ -141,7 +138,6 @@ body:has(a:hover) #cur-ring { width:60px; height:60px; border-color:rgba(212,168
 }
 .doc-opening strong { color:var(--sand); font-style:normal; font-weight:500; }
 
-/* ── AXIOM ── */
 .doc-axiom {
   margin-bottom:88px; padding:52px 0;
   border-top:1px solid var(--line-gold);
@@ -155,7 +151,6 @@ body:has(a:hover) #cur-ring { width:60px; height:60px; border-color:rgba(212,168
   color:var(--gold-hi); letter-spacing:.04em; line-height:1.1;
 }
 
-/* ── SECTIONS ── */
 .doc-section { margin-bottom:68px; padding-bottom:68px; border-bottom:1px solid var(--line-dim); }
 .doc-section.last { border-bottom:none; margin-bottom:0; padding-bottom:0; }
 
@@ -194,7 +189,6 @@ body:has(a:hover) #cur-ring { width:60px; height:60px; border-color:rgba(212,168
 }
 .pull-quote p+p { margin-top:10px !important; }
 
-/* ── SECTOR GRID ── */
 .sector-grid {
   display:grid; grid-template-columns:1fr 1fr; gap:1px;
   margin-top:28px; border:1px solid var(--line-gold);
@@ -223,7 +217,6 @@ body:has(a:hover) #cur-ring { width:60px; height:60px; border-color:rgba(212,168
   font-size:15px; line-height:1.7; color:var(--sand-lo);
 }
 
-/* ── NAV LINKS ── */
 .nav-links { display:flex; flex-direction:column; gap:0; margin-top:28px; }
 .nav-link {
   display:flex; align-items:center; gap:24px;
@@ -244,7 +237,6 @@ body:has(a:hover) #cur-ring { width:60px; height:60px; border-color:rgba(212,168
 .nl-arr { font-size:16px; color:var(--gold-lo); transition:color .3s; }
 .nav-link:hover .nl-arr { color:var(--gold); }
 
-/* ── FOOTER ── */
 .doc-footer {
   border-top:1px solid var(--line-dim); padding:40px 60px;
   display:flex; align-items:center; justify-content:space-between; gap:40px;
@@ -454,6 +446,14 @@ body:has(a:hover) #cur-ring { width:60px; height:60px; border-color:rgba(212,168
           <div class="nl-body">
             <div class="nl-title">Source Integrity</div>
             <div class="nl-path">/sources/ — The claim standards and sourcing framework behind this site</div>
+          </div>
+          <div class="nl-arr">→</div>
+        </a>
+        <a href="/availability/" class="nav-link">
+          <div class="nl-num">04</div>
+          <div class="nl-body">
+            <div class="nl-title">Strategic Availability</div>
+            <div class="nl-path">/availability/ — Acquisition posture and qualified inquiry</div>
           </div>
           <div class="nl-arr">→</div>
         </a>
