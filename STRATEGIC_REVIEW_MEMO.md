@@ -9,9 +9,11 @@
 **Domain:** GigaSaudi.com  
 **Category:** Strategic naming asset — sovereign transformation tier  
 **Status:** Developed. Reference infrastructure live. Available for qualified acquisition only.  
-**Contact:** inquiries@gigasaudi.com
+**Contact:** agent@sohadot.com
 
 GigaSaudi.com is not a parked domain. It is a built strategic asset with live reference infrastructure, a documented positioning thesis, a multi-sector content architecture, and a category claim at the intersection of the two most resonant terms in Saudi Arabia's transformation era.
+
+GigaSaudi.com is reviewed through Sohadot's professional strategic asset channel.
 
 ---
 
@@ -75,7 +77,7 @@ An organization with significant Saudi exposure — a major investor, a giga-pro
 
 This asset is not offered through retail domain-market logic. The review process is designed for strategic acquirers.
 
-1. Submit a qualified inquiry to inquiries@gigasaudi.com with your organisation name, intended deployment context, and acquisition scope.
+1. Submit a qualified inquiry to agent@sohadot.com with your organisation name, intended deployment context, and acquisition scope.
 2. Initial review of strategic fit against the qualified acquirer profile.
 3. Confidential discussion of acquisition terms, asset scope, and transfer conditions.
 4. Agreed terms documented. Verified identity confirmed on both sides.
@@ -88,7 +90,7 @@ No public price. No auction. No speculative resale pathway. Qualified acquirers 
 
 ## 07 — Contact
 
-**Strategic inquiries:** inquiries@gigasaudi.com  
+**Strategic inquiries:** agent@sohadot.com  
 **Subject line:** GigaSaudi.com Strategic Review — [Organisation Name]
 
 Inquiries are reviewed for strategic fit before a response is issued. Include your organisation, intended use, and acquisition context. All communications are confidential.

@@ -47,4 +47,26 @@ No further public-facing changes are required at this stage.
 
 ---
 
+## Decision 002
+
+**Date:** 2026-06-29  
+**Decision:** Use Sohadot's professional contact channel, agent@sohadot.com, as the public strategic review contact for GigaSaudi.com.
+
+### Reason
+
+The asset should not appear to operate as a self-contained sales mailbox. Routing inquiries through Sohadot reinforces professional ownership, portfolio authority, and institutional trust.
+
+### Boundary
+
+GigaSaudi.com remains an independent strategic naming asset. The contact channel does not imply affiliation with any Saudi entity.
+
+### Changes Applied
+
+- **All inner pages (sectors, saudi-giga-scale, why-gigasaudi):** doc-nav CTA email updated from `inquiries@gigasaudi.com` to `agent@sohadot.com`
+- **Availability page:** doc-nav CTA and inq-cta email both updated to `agent@sohadot.com`
+- **STRATEGIC_REVIEW_MEMO.md:** Contact in sections 01, 06, and 07 updated to `agent@sohadot.com`; note added that GigaSaudi.com is reviewed through Sohadot's professional strategic asset channel
+- **Retained internally:** `inquiries@gigasaudi.com` may remain as an internal alias or redirect; it is no longer the public-facing primary channel
+
+---
+
 *Log maintained by the domain owner. Internal record only.*
