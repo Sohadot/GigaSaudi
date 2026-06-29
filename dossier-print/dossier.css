@@ -383,11 +383,11 @@ strong { font-weight: 700; }
   font-family: 'Courier New', monospace;
 }
 
-/* ── Valuation Tiers ─────────────────────────────── */
+/* ── Review Stages ─────────────────────────────── */
 
-.valuation-tiers { margin: 28px 0 32px; }
+.review-stages { margin: 28px 0 32px; }
 
-.valuation-tier {
+.review-stage {
   padding: 22px 0;
   border-bottom: 1px solid var(--line);
   display: grid;
@@ -396,7 +396,7 @@ strong { font-weight: 700; }
   align-items: start;
 }
 
-.valuation-tier .tier-label {
+.review-stage .stage-label {
   font-size: 10px;
   letter-spacing: .18em;
   text-transform: uppercase;
@@ -405,14 +405,14 @@ strong { font-weight: 700; }
   padding-top: 7px;
 }
 
-.valuation-tier .tier-value {
+.review-stage .stage-title {
   font-size: 24px;
   font-weight: 400;
   color: var(--ink);
   line-height: 1.1;
 }
 
-.valuation-tier .tier-note {
+.review-stage .stage-note {
   font-size: 13px;
   color: var(--muted);
   margin-top: 6px;
@@ -606,8 +606,8 @@ strong { font-weight: 700; }
   .asset-table td:first-child { padding-bottom: 4px; border-bottom: none; }
 
   .use-case { grid-template-columns: 1fr; gap: 8px; }
-  .valuation-tier { grid-template-columns: 1fr; }
-  .valuation-tier .tier-note { margin-top: 4px; }
+  .review-stage { grid-template-columns: 1fr; }
+  .review-stage .stage-note { margin-top: 4px; }
 
   .closing-brand { font-size: 36px; }
 

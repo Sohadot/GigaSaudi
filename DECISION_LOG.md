@@ -69,4 +69,26 @@ GigaSaudi.com remains an independent strategic naming asset. The contact channel
 
 ---
 
+## Decision 003
+
+**Date:** 2026-06-29  
+**Decision:** Remove all public valuation references from GigaSaudi.com.
+
+### Reason
+
+Public price anchors limit strategic upside and can reduce a category-level asset to domain-market logic. GigaSaudi.com must be evaluated privately by qualified acquirers based on intended deployment, acquisition scope, and strategic relevance.
+
+### Boundary
+
+No public price, no valuation range, no entry threshold, no marketplace-style offer framing.
+
+### Changes Applied
+
+- **Home page:** Replaced public acquisition value tiers with non-price private review stages: Qualified Context, Strategic Memo Review, and Private Terms Review
+- **Home page CTA note:** Replaced auction/listing transfer language with the private strategic acquisition terms boundary
+- **Public dossier:** Reframed the public value section as Private Strategic Review
+- **Printable dossier:** Replaced acquisition threshold tiers with private strategic review stages
+
+---
+
 *Log maintained by the domain owner. Internal record only.*

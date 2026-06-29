@@ -289,24 +289,24 @@ This is why GigaSaudi.com should not be evaluated as a low-context retail domain
  
 It is a strategic naming asset.
   
-## XI. Valuation Posture
+## XI. Private Strategic Review
  
-GigaSaudi.com does not present a fixed public price.
+GigaSaudi.com is not publicly priced.
  
-Its valuation depends on the acquirer’s intended use, institutional relevance, development plan, strategic need, and ability to control or operationalize the name at category level.
+Strategic acquisition terms are reviewed privately with qualified parties after buyer identity, intended deployment, acquisition scope, and strategic relevance are established.
  
-Indicative valuation posture:
+Review sequence:
  
  
-- **Entry threshold:** high five figures
+- **Qualified Context:** organisation, intended deployment, and acquisition scope required
  
-- **Developed strategic asset:** six-figure range
+- **Strategic Memo Review:** the pre-dossier memo is shared only after strategic fit is established
  
-- **Primary strategic acquisition:** negotiated privately
+- **Private Terms Review:** acquisition terms are discussed privately after identity, scope, and strategic fit are confirmed
  
 
  
-The strongest valuation case emerges when the acquirer understands the asset not as a domain name alone, but as a category-control layer for the Saudi giga-scale era.
+The strongest acquisition case emerges when the acquirer understands the asset not as a domain name alone, but as a category-control layer for the Saudi giga-scale era.
   
 ## XII. Confidential Strategic Acquisition Protocol
  

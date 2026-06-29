@@ -704,30 +704,30 @@ body:has(a:hover) #cur-ring { width:60px; height:60px; border-color:rgba(212,168
 }
 .target-cell.primary .target-rationale { font-size: 16px; color: var(--sand); }
 
-.threshold {
+.review-steps {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 2px;
   margin-bottom: 56px;
 }
-.thresh-cell {
+.review-step {
   background: rgba(8,7,20,0.6);
   border: 1px solid var(--line-dim);
   padding: 28px 24px;
   text-align: center;
 }
-.thresh-cell.mid { background: rgba(212,168,67,0.06); border-color: rgba(212,168,67,0.25); }
-.thresh-lbl { font-size:9px; letter-spacing:.35em; color:var(--gold-lo); text-transform:uppercase; margin-bottom:14px; }
-.thresh-val {
+.review-step.mid { background: rgba(212,168,67,0.06); border-color: rgba(212,168,67,0.25); }
+.review-label { font-size:9px; letter-spacing:.35em; color:var(--gold-lo); text-transform:uppercase; margin-bottom:14px; }
+.review-title {
   font-family: 'Bebas Neue', sans-serif;
-  font-size: 40px;
+  font-size: 30px;
   color: var(--white);
   letter-spacing: .04em;
-  line-height: 1;
-  margin-bottom: 6px;
+  line-height: 1.08;
+  margin-bottom: 10px;
 }
-.thresh-cell.mid .thresh-val { color: var(--gold-hi); }
-.thresh-note { font-size: 10px; color: var(--sand-lo); }
+.review-step.mid .review-title { color: var(--gold-hi); }
+.review-note { font-size: 11px; color: var(--sand-lo); line-height: 1.65; }
 
 .acq-cta-wrap { display: flex; align-items: center; gap: 40px; }
 .acq-cta {
@@ -823,7 +823,7 @@ body:has(a:hover) #cur-ring { width:60px; height:60px; border-color:rgba(212,168
   #s-acquire { padding: 80px 28px; }
   .target-grid { grid-template-columns: 1fr; }
   .target-cell.primary { grid-column: span 1; }
-  .threshold { grid-template-columns: 1fr; }
+  .review-steps { grid-template-columns: 1fr; }
   #s-footer { grid-template-columns: 1fr; text-align: center; gap: 16px; }
   .ft-right { text-align: center; }
   .acq-cta-wrap { flex-direction: column; align-items: flex-start; }
@@ -1239,21 +1239,21 @@ body:has(a:hover) #cur-ring { width:60px; height:60px; border-color:rgba(212,168
         </div>
       </div>
     </div>
-    <div class="threshold rx rx-d2">
-      <div class="thresh-cell">
-        <div class="thresh-lbl">Entry Threshold</div>
-        <div class="thresh-val">$25K</div>
-        <div class="thresh-note">Domain only — bare asset</div>
+    <div class="review-steps rx rx-d2">
+      <div class="review-step">
+        <div class="review-label">01</div>
+        <div class="review-title">Qualified Context</div>
+        <div class="review-note">Organisation, intended deployment, and acquisition scope required.</div>
       </div>
-      <div class="thresh-cell mid">
-        <div class="thresh-lbl">Developed Asset</div>
-        <div class="thresh-val">$75–250K</div>
-        <div class="thresh-note">With reference infrastructure built</div>
+      <div class="review-step mid">
+        <div class="review-label">02</div>
+        <div class="review-title">Strategic Memo Review</div>
+        <div class="review-note">The pre-dossier memo is shared only after strategic fit is established.</div>
       </div>
-      <div class="thresh-cell">
-        <div class="thresh-lbl">Strategic Target</div>
-        <div class="thresh-val">Negotiated</div>
-        <div class="thresh-note">Sovereign / institutional buyer</div>
+      <div class="review-step">
+        <div class="review-label">03</div>
+        <div class="review-title">Private Terms Review</div>
+        <div class="review-note">Acquisition terms are discussed privately after buyer identity, scope, and strategic fit are confirmed.</div>
       </div>
     </div>
     <div class="acq-cta-wrap rx rx-d3">
@@ -1262,8 +1262,7 @@ body:has(a:hover) #cur-ring { width:60px; height:60px; border-color:rgba(212,168
         <span>Request Strategic Memo</span>
       </a>
       <p class="acq-note">
-        Available only to a qualified strategic acquirer.<br>
-        No public auction. No retail listing. Verified escrow transfer only.
+        GigaSaudi.com is not publicly priced. Strategic acquisition terms are reviewed privately with qualified parties after buyer identity, intended deployment, and acquisition scope are established.
       </p>
     </div>
   </section>
@@ -1306,7 +1305,7 @@ window.addEventListener('scroll', () => {
 
 const obs = new IntersectionObserver(entries => {
   entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('in'); });
-}, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+}, { rootMargin: '0px 0px -60px 0px' });
 document.querySelectorAll('.rx').forEach(el => obs.observe(el));
 
 const flowObs = new IntersectionObserver(entries => {
@@ -1316,7 +1315,7 @@ const flowObs = new IntersectionObserver(entries => {
       if(bar) bar.style.width = bar.dataset.width + '%';
     }
   });
-}, { threshold: 0.3 });
+});
 document.querySelectorAll('.flow-row').forEach(el => flowObs.observe(el));
 
 const sbObs = new IntersectionObserver(entries => {
@@ -1326,7 +1325,7 @@ const sbObs = new IntersectionObserver(entries => {
       if(fill) { const w = fill.style.width; fill.style.width='0'; setTimeout(()=>fill.style.width=w,100); }
     }
   });
-}, { threshold: 0.3 });
+});
 document.querySelectorAll('.proj-panel').forEach(el => sbObs.observe(el));
 
 const archScroll = document.getElementById('arch-scroll');
